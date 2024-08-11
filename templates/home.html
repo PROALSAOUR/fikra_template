@@ -6,10 +6,11 @@
     <meta name="description" content=" الوجهة المثالية لعشاق الأناقة، نقدم ملابس عصرية للشباب والبنات بتصاميم فريدة وجودة عالية. استمتعوا بتجربة تسوق ممتعة لتجديد إطلالتكم بأحدث صيحات الموضة.">
 
     <!-- import css files -->
-    <link rel="stylesheet" href="/Fikra_store/css/normalize.css">  <!-- Render All Element Normally -->
-     <link rel="stylesheet" href="/Fikra_store/css/all.css">       <!-- Font Awesome Icons File     -->
-    <link rel="stylesheet" href="/Fikra_store/css/all.min.css">    <!-- Font Awesome Icons File     -->
-    <link rel="stylesheet" href="/Fikra_store/css/style.css">      <!-- Main Template CSS File      -->
+    <link rel="stylesheet" href="/css/normalize.css">                                 <!-- Render All Element Normally -->
+     <link rel="stylesheet" href="/css/all.css">                                      <!-- Font Awesome Icons File     -->
+    <link rel="stylesheet" href="/css/all.min.css">                                   <!-- Font Awesome Icons File     -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" /> <!-- Slider Style CSS File       -->       
+    <link rel="stylesheet" href="/css/style.css">                                     <!-- Main Template CSS File      -->
     <!-- import font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,7 +31,7 @@
                     <a href="#"><i class="fa-regular fa-bell bell" ></i></a>
                 </div>
                 <div class="logo">
-                    <img src="/Fikra_store/images/name logo.jpg" alt="Store Name">
+                    <img src="/images/name logo.jpg" alt="Store Name">
                 </div>
                 <div class="points">
                     <a href="">
@@ -52,18 +53,54 @@
         </div>
      </header>
     <!-- End Header  -->
-     <!-- Start Ads -->
-      <div class="ads">
-        <div class="hello-section">
+    <!-- Start Ads -->
+    <div class="ads">
+        <div class="welcome">
             <h2>اهلا بك محمد</h2>
-            <p> لدينا عروض جديدة مميزة من اجلك! </p>
+            <p> لدينا عروض جديدة  من اجلك! </p>
         </div>
-        <div class="sliders">
-            <div class="slider"><img src="/Fikra_store/images/" alt="slider"></div>
-            <div class="slider"><img src="/Fikra_store/images/" alt="slider"></div>
-            <div class="slider"><img src="/Fikra_store/images/" alt="slider"></div>
+        <section  id="tranding">
+                <div class="swiper tranding-slider">
+                    <div class="swiper-wrapper">
+                    <!-- Slide-start -->
+                    <div class="swiper-slide tranding-slide">
+                        <div class="tranding-slide-img">
+                            <img src="/images/ads-holder.png" alt="Tranding">                        </div>
+                    </div>
+                    <!-- Slide-end -->
+                    <!-- Slide-start -->
+                    <div class="swiper-slide tranding-slide">
+                        <div class="tranding-slide-img">
+                            <img src="/images/ads-holder.png" alt="Tranding">
+                        </div>
+                    </div>
+                    <!-- Slide-end -->
+                    <!-- Slide-start -->
+                    <div class="swiper-slide tranding-slide">
+                        <div class="tranding-slide-img">
+                            <img src="/images/ads-holder.png" alt="Tranding">
+                        </div>
+                    </div>
+                    <!-- Slide-end -->
+                    </div>
+                </div>     
+        </section>
+    </div>
+     <!-- End Ads -->
+     <!-- Start Brands -->
+      <div class="brands">
+        <h3>تسوق من افضل الماركات العالمية</h3>
+        <div class="logos">
+            <a href="#"><img src="" alt=""></a>
+            <a href="#"><img src="" alt=""></a>
+            <a href="#"><img src="" alt=""></a>
+            <a href="#"><img src="" alt=""></a>
         </div>
       </div>
-     <!-- End Ads -->
+     <!-- End Brands -->
+
+     <!-- import Javascript files -->
+     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+     <script src="/javascript/slider.js"></script>
 </body>
 </html>

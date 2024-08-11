@@ -86,7 +86,6 @@ a {
     }
   }
 
-
 /* Start Header  */
 .header {
   background-color: var(--background-color-alt);
@@ -94,6 +93,7 @@ a {
   position: fixed;
   width: 100%;
   height: 90px;
+  z-index: 5;
 }
 .header .upper-part {
   position: absolute;
@@ -154,7 +154,7 @@ a {
     height: var(--mob-xl-size);
   }
   .header .upper-part .points a{
-    font-size:  var(--mob-l-size);
+    font-size: calc( var(--mob-l-size)- 2px);
   }
 }
 .header .upper-part .points a span{
@@ -196,4 +196,112 @@ a {
 }
 /* End Header  */
 /* Start Ads */
+.ads {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 80px;
+
+}
+.ads .welcome {
+  margin: 50px auto;
+}
+/* tab & mobile media */
+@media (max-width: 768px) {
+  .ads .welcome {
+    margin: 30px auto;
+  }
+}
+
+.ads .welcome h2{
+  color: var(--main-color);
+  font-size: var(--lab-xl-size);
+  text-align: center;
+}
+.ads .welcome p{
+  margin: 10px auto;
+  font-size: var(--lab-l-size);
+}
+/* tab media */
+@media (max-width: 768px) {
+  .ads .welcome h2 {
+    font-size: var(--tab-xl-size);
+  }
+  .ads .welcome p{
+    font-size: var(--tab-l-size);
+  }
+}
+/* mobile media */
+@media (max-width: 576px) {
+  .ads .welcome h2 {
+    font-size: var(--mob-xl-size);
+  }
+  .ads .welcome p{
+    font-size: var(--mob-l-size);
+  }
+}
+.ads #tranding {
+  padding: 4rem 0;
+  width: 100%;
+  margin-top: -90px;
+}
+/* tab  & mobile media */
+@media (max-width: 768px) {
+  .ads #tranding {
+    margin-top: -80px;
+  }
+}
+
+#tranding .tranding-slider {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: 100%;
+  padding: 0px 0;
+}
+#tranding .tranding-slider .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%; /* عرض الصورة */
+  height: calc(width * 0.4); /* طول الصورة */
+  margin: 0 80px;
+}
+/* tab  media */
+@media (max-width: 768px) {
+  #tranding .tranding-slider .swiper-slide {
+    width: 80%;
+    margin: 0 50px;
+  }
+}
+/* small tab media */
+@media (max-width: 568px) {
+  #tranding .tranding-slider .swiper-slide {
+    margin: 0 35px;
+  }
+}
+/* mobile media */
+@media (max-width: 476px) {
+  #tranding .tranding-slider .swiper-slide {
+    margin: 0 25px;
+  }
+}
+#tranding .tranding-slide .tranding-slide-img img {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  object-fit: cover;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+}
+.swiper-slide-shadow-left,
+.swiper-slide-shadow-right {
+  display: none;
+}
 /* End Ads */
+/* Start Brands */
+/* End Brands */
