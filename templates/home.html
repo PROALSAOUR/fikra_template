@@ -21,13 +21,14 @@
     <link rel="website icon" type="" href="">
     
 </head>
-<body dir="rtl" >
+<body dir="rtl" class="" >
     <!-- Start Header  -->
-     <header>
+    <header>
         <div class='header' id="header">     
             <div class="upper-part">
                 <div class="icons">
-                    <a href="#"><i class="fa-solid fa-bars menu"></i></a>
+                    <input type="checkbox" name="" id="side-menu" hidden>
+                    <label for="side-menu"><i class="fa-solid fa-bars menu"></i></label>   
                     <a href="#"><i class="fa-regular fa-bell bell" ></i></a>
                 </div>
                 <div class="logo">
@@ -36,7 +37,7 @@
                 <div class="points">
                     <a href="">
                         <span>26</span>
-                        <i class="fa-solid fa-crown"></i>                    
+                        <i class="fa-solid fa-gem"></i>                
                     </a>
                 </div>
             </div>
@@ -51,8 +52,36 @@
                 </div>
             </div>
         </div>
-     </header>
+    </header>
     <!-- End Header  -->
+    <!-- Start Nav -->
+    <nav>
+        <div class="container">
+            <div class="nav">
+                <div class="nav-item active">
+                    <a href="home" id="home" ><i class="fa-solid fa-store"></i></a>
+                    <label for="home">الرئيسية</label>
+                </div>
+                <div class="nav-item">
+                    <a href="cart" id="cart"><i class="fa-solid fa-bag-shopping"></i></a>
+                    <label for="cart">حقيبتي</label>
+                </div>
+                <div class="nav-item">
+                    <a href="search" id="search"><i class="fa-solid fa-magnifying-glass"></i></a>
+                    <label for="search">البحث</label>
+                </div>
+                <div class="nav-item">
+                    <a href="fav" id="fav"><i class="fa-solid fa-bookmark"></i></a>
+                    <label for="fav">المفضلة</label>
+                </div>
+                <div class="nav-item ">
+                    <a href="user" id="user"><i class="fa-solid fa-circle-user"></i></a>
+                    <label for="user">حسابي</label>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- End Nav -->
     <!-- Start Ads -->
     <div class="ads">
         <div class="welcome">
@@ -65,7 +94,8 @@
                     <!-- Slide-start -->
                     <div class="swiper-slide tranding-slide">
                         <div class="tranding-slide-img">
-                            <img src="/images/ads-holder.png" alt="Tranding">                        </div>
+                            <img src="/images/ads-holder.png" alt="Tranding">
+                        </div>
                     </div>
                     <!-- Slide-end -->
                     <!-- Slide-start -->
@@ -89,13 +119,38 @@
      <!-- End Ads -->
      <!-- Start Brands -->
       <div class="brands">
-        <h3>تسوق من افضل الماركات العالمية</h3>
-        <div class="logos">
-            <a href="#"><img src="" alt=""></a>
-            <a href="#"><img src="" alt=""></a>
-            <a href="#"><img src="" alt=""></a>
-            <a href="#"><img src="" alt=""></a>
-        </div>
+        <h3>
+            تسوق من افضل الماركات      
+        </h3>
+        <hr class="upper-sep">
+        <section  id="branding">
+            <div class="swiper branding-slider">
+                <div class="swiper-wrapper">
+                <!-- brand-logo-start -->
+                <div class="swiper-slide branding-slide">
+                    <div class="branding-slide-img">
+                        <a href=""><img src="/images/logo-holder.png" alt="branding"></a>
+                    </div>
+                </div>
+                <!-- brand-logo-end -->
+                <!-- brand-logo-start -->
+                <div class="swiper-slide branding-slide">
+                    <div class="branding-slide-img">
+                        <a href=""><img src="/images/logo-holder.png" alt="branding"></a>
+                    </div>
+                </div>
+                <!-- brand-logo-end -->
+                <!-- brand-logo-start -->
+                <div class="swiper-slide branding-slide">
+                    <div class="branding-slide-img">
+                        <a href=""><img src="/images/logo-holder.png" alt="branding"></a>
+                    </div>
+                </div>
+                <!-- brand-logo-end -->
+                </div>
+            </div>     
+        </section>
+        <hr class="lower-sep">
       </div>
      <!-- End Brands -->
 
