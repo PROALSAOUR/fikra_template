@@ -32,3 +32,7 @@ var BrandingSlider = new Swiper('.branding-slider', {
     loopAdditionalSlides: 30, // لجعل الحركة أكثر سلاسة
     freeMode: true, // تفعيل الوضع الحر لضمان الحركة المستمرة
   });
+
+  document.querySelector('.exit').addEventListener('click', function() {
+    document.getElementById('side-menu').checked = false;
+});
