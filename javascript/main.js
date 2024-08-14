@@ -36,3 +36,26 @@ var BrandingSlider = new Swiper('.branding-slider', {
   document.querySelector('.exit').addEventListener('click', function() {
     document.getElementById('side-menu').checked = false;
 });
+
+// انتظر حتى يتم تحميل الصفحة بالكامل
+document.addEventListener('DOMContentLoaded', function() {
+  const toggle = document.getElementById('them');
+  const body = document.body;
+
+  // تحقق من وجود الكلاس في localStorage واضف الكلاس إلى body إذا كان موجودًا
+  if (localStorage.getItem('them') === 'light') {
+      body.classList.add('light-them');
+      toggle.checked = true;
+  }
+
+  // حدث عند تغيير حالة التشيك بوكس
+  toggle.addEventListener('change', function() {
+      if (toggle.checked) {
+          body.classList.add('light-them');
+          localStorage.setItem('them', 'light');
+      } else {
+          body.classList.remove('light-them');
+          localStorage.removeItem('them');
+      }
+  });
+});
