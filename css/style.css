@@ -173,6 +173,11 @@ select option::selection {
     }
   }
 /* ====================================     common componant     ================================================= */
+/* disaple any icon */
+.product-box .disapled {
+  display: none;
+  visibility: hidden;
+}
 /* Start main product box  */
 .product-box{
   background-color: var(--background-color-alt);
@@ -213,7 +218,7 @@ select option::selection {
   position: absolute;
   top: 4%;
   right: 4%;
-  z-index: 4;
+  z-index: 1;
 }
 .product-box .add-to-fav i {
   color: var(--main-color);
@@ -342,20 +347,92 @@ select option::selection {
   -ms-transform: rotate(150deg);
   -o-transform: rotate(150deg);
 }
+.product-box .add-to-cart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color: #ececec;
+  background-color: var(--main-color);
+  padding: 8px 10px;
+  border-radius: calc(var(--main-border-radius) - 4px);
+  -webkit-border-radius: calc(var(--main-border-radius) - 4px);
+  -moz-border-radius: calc(var(--main-border-radius) - 4px);
+  -ms-border-radius: calc(var(--main-border-radius) - 4px);
+  -o-border-radius: calc(var(--main-border-radius) - 4px);
+}
+.product-box .add-to-cart span {
+  font-size: var(--lab-s-size);
+  color: #ececec;
+}
+.product-box .add-to-cart i {
+  font-size: var(--lab-s-size);
+  color: #ececec;
+  padding-right: 4px;
+}
+/* small tab media */
+@media (max-width: 676px)  {
+  .product-box .add-to-cart span {
+    font-size: var(--tab-s-size);
+  }
+  .product-box .add-to-cart i {
+    font-size: var(--tab-s-size);
+  }
+}
+/* mobile media */
+@media (max-width: 586px)  {
+  .product-box .add-to-cart {
+    bottom: 8px;
+    left: 8px;
+    padding: 4px 10px;
+  }
+}
+/* small mobile media */
+@media (max-width: 509px)  {
+  .product-box .add-to-cart {
+    bottom: 10px;
+    padding: 2px 8px 4px;
+  }
+  .product-box .add-to-cart span {
+    font-size: var(--mob-s-size);
+  }
+  .product-box .add-to-cart i {
+    font-size: var(--mob-s-size);
+  }
+}
+/* very small mobile media */
+@media (max-width: 396px)  {
+  .product-box .add-to-cart i {
+    visibility: hidden;
+    display: none;
+  }
+}
+/* very small mobile media */
+@media (max-width: 376px)  {
+  .product-box .add-to-cart i {
+    visibility: visible;
+    display: inline-block;
+    width: 20px;
+    margin: auto;
+  }
+  .product-box .add-to-cart span {
+    visibility: hidden;
+    display: none;
+  }
+}
 /* End main product box  */
 /* Start specific product box  */
 /* Tab media  */
 @media (max-width: 792px) {
-  /* .searched-products .products-cards {
-    flex-direction: column;
-    flex-wrap: nowrap;
-  } */
   .specific {
     width: 100%; 
   }
   .specific .product-box {
     position: relative;
-    width: 90%;
+    width: 95%;
     height: 220px;
     display: flex;
     flex-direction: row;
@@ -454,7 +531,6 @@ select option::selection {
   .specific .product-box .product-info .product-price {
     font-size: var(--mob-xl-size);
     bottom: 5px;
-    left: 20px;
   }
 }
 /* small mobile media */
@@ -496,6 +572,12 @@ select option::selection {
   }
 }
 /* very small mobile media */
+@media (max-width: 412px) {
+  .specific .product-box .product-info .product-price {
+    font-size: var(--mob-xs-size);
+  }
+}
+/* very small mobile media */
 @media (max-width: 396px) {
   .specific .product-box {
     height: 120px;
@@ -526,13 +608,19 @@ select option::selection {
     font-size: var(--mob-s-size);
   }
   .specific .product-box .product-info .product-price {
+    font-size: var(--mob-xs-size);
+  }
+}
+/* very very small mobile media */
+@media (max-width: 396px) {
+  .product-box .add-to-fav {
+    top: 7%;
+  }
+  .product-box .add-to-fav i {
     font-size: var(--mob-m-size);
-    left: 10px;
   }
 }
 /* End specific product box  */
-
-
 /* ============================ Home Page & essintial componant ================================================= */
 /* Start Header  */
 .header {
@@ -540,7 +628,7 @@ select option::selection {
   position: fixed;
   width: 100%;
   height: 90px;
-  z-index: 5;
+  z-index: 1000;
 }
 .header .upper-part {
   position: absolute;
@@ -1916,7 +2004,6 @@ hr.sep {
 /* End Footer  */
 /* ====================================  Search Page  ========================================================== */
 /* Start Search Bar */
-
 .search-bar {
   width: 100%;
   position: relative;
@@ -2027,7 +2114,7 @@ hr.sep {
   max-height: 350px;
   overflow-y: auto;
   padding: 20px;
-  z-index: 100;
+  z-index: 990;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   border-radius: var(--main-border-radius);
   -webkit-border-radius: var(--main-border-radius);
@@ -2212,6 +2299,10 @@ hr.sep {
     height:310px; /*طول المنتج*/
     margin: 10px 5px 10px ;
   }
+  .product-box .add-to-cart {
+    display: none;
+    visibility: hidden;
+  }
 }
 .searched-products .product-box .product-info {
   padding: 10px;
@@ -2287,6 +2378,7 @@ hr.sep {
   font-size: var(--lab-l-size);
   color: var(--main-text-color);
   margin: 0 10px ;
+  font-weight: 900;
 }
 .pagination .page-number .from{
   color: var(--main-color);
@@ -2326,3 +2418,59 @@ hr.sep {
   }
 }
 /* End Pagination  */
+/* ====================================  Favourite Page  ========================================================== */
+/*  Start Search Bar in fav */
+.fav-search .empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+  font-size: var(--lab-m-size);
+  height: 50px;
+  cursor: pointer;
+  border: none;
+  margin-bottom: 5px;
+  padding: 0 10px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.fav-search .empty .delete {
+  color: #ececec;
+  font-weight: 600;
+}
+.fav-search .empty .items-count {
+  color: #ececec;
+  font-weight: 600;
+}
+.fav-search .empty i {
+  color: #ececec;
+  margin-right: 5px;
+}
+/* tablet */
+@media (max-width: 768px) {
+  .fav-search .search-bar .empty {
+    height: 40px;
+    font-size: var(--tab-m-size);
+  }
+}
+/* phone */
+@media (max-width: 576px) {
+  .fav-search .search-bar .empty {
+    height: 35px;
+    font-size: var(--mob-m-size);
+  }
+}
+/* small phones */
+@media (max-width: 386px) {
+  .fav-search .search-bar .empty {
+    height: 35px;
+    font-size: var(--mob-m-size);
+  }
+}
+/*  End Search Bar in fav */
+/* Start fav-products  */
+
+/* End fav-products  */
