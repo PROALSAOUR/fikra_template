@@ -151,3 +151,59 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+
+// تحديد التشيك بوكس والفاتورة
+const showCheckbox = document.querySelector('#show');
+const receipt = document.querySelector('.receipt');
+const confirmButton = document.querySelector('.confirm');
+
+// وظيفة لتحديث حالة الفاتورة بناءً على عرض الشاشة
+function updateReceiptVisibility() {
+    if (window.innerWidth <= 793) {
+        // استعادة حالة التشيك بوكس من localStorage عند تحميل الصفحة
+        if (localStorage.getItem('showCheckboxState') === 'checked') {
+            showCheckbox.checked = true;
+            receipt.style.display = 'block';
+        } else {
+            showCheckbox.checked = false;
+            receipt.style.display = 'none';
+        }
+
+        // إضافة حدث تغيير لحالة التشيك بوكس
+        showCheckbox.addEventListener('change', function() {
+            if (this.checked) {
+                receipt.style.display = 'block';
+                localStorage.setItem('showCheckboxState', 'checked');
+            } else {
+                receipt.style.display = 'none';
+                localStorage.setItem('showCheckboxState', 'unchecked');
+            }
+        });
+
+        // إضافة حدث للنقر على أي مكان خارج الفاتورة
+        document.addEventListener('click', function(event) {
+            if (!receipt.contains(event.target) && event.target !== showCheckbox) {
+                showCheckbox.checked = false;
+                receipt.style.display = 'none';
+                localStorage.setItem('showCheckboxState', 'unchecked');
+            }
+        });
+
+        // إضافة حدث للنقر على زر يحتوي على الكلاس confirm
+        confirmButton.addEventListener('click', function() {
+            showCheckbox.checked = false;
+            receipt.style.display = 'none';
+            localStorage.setItem('showCheckboxState', 'unchecked');
+        });
+    } else {
+        // إذا كانت الشاشة أكبر من 793px، اجعل الفاتورة تظهر دائمًا
+        receipt.style.display = 'block';
+        localStorage.removeItem('showCheckboxState');  // إزالة حالة التشيك بوكس من localStorage
+    }
+}
+
+// استدعاء الوظيفة عند تحميل الصفحة
+updateReceiptVisibility();
+
+// استدعاء الوظيفة عند تغيير حجم الشاشة
+window.addEventListener('resize', updateReceiptVisibility);
