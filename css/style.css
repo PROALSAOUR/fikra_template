@@ -191,6 +191,9 @@ select option::selection {
   -ms-border-radius: var(--main-border-radius);
   -o-border-radius: var(--main-border-radius);
 }
+ .product-box:last-child {
+  margin-left: 60px;
+}
 /* tab media */
 @media (max-width: 868px) {
   .product-box {
@@ -285,6 +288,20 @@ select option::selection {
   color: var(--main-text-color);
   letter-spacing: 2px;
 }
+.product-box .product-price .buy-by-points {
+  margin-right: 70%;
+}
+.product-box .product-price .buy-by-points i {
+  color: var(--main-color);
+}
+/* if proudct price is points or mony */
+.home-page .product-box .product-price .buy-by-points {
+  display: none;
+}
+.account-page .product-box .product-price .buy-by-money  {
+  display: none;
+}
+
 /* tab media */
 @media (max-width: 868px) {
   .product-box .product-info {
@@ -1581,13 +1598,14 @@ hr.sep {
   margin-bottom: 50px;
 }
 #products .title h2{
-  font-size: var(--lab-xxl-size);
+  font-size: var(--lab-xl-size);
   color: var(--main-text-color);
+  font-weight: 800;
 }
 #products .title i{
   font-size: var(--lab-xl-size);
   color: var(--main-color);
-  margin-right: 30px;
+  margin-right: 25px;
 }
 /* tab media */
 @media (max-width: 868px) {
@@ -1596,7 +1614,7 @@ hr.sep {
     margin-bottom: 40px;
   }
   #products .title h2{
-    font-size: var(--tab-xxxl-size);
+    font-size: var(--tab-xxl-size);
   }
   #products .title i {
     font-size: var(--tab-xxl-size);
@@ -1609,7 +1627,7 @@ hr.sep {
     margin-bottom: 30px;
   }
   #products .title h2{
-    font-size: var(--mob-xxxl-size);
+    font-size: var(--mob-xxl-size);
   }
   #products .title i {
     font-size: var(--mob-xxl-size);
@@ -2950,3 +2968,129 @@ hr.sep {
   margin: 15px auto ;
 }
 /* End order confirm  */
+/* ====================================  Account Page  ========================================================== */
+/* Strat Points Section  */
+.account-points .container {
+  padding-top:110px ;
+  margin-bottom: 30px; /* مؤقت */
+  max-width: 60%;
+}
+/* Lab media */
+@media (max-width: 902px) {
+  .account-points .container {
+    max-width: 70%;
+  }
+}
+.my-points{
+  background-color: var(--background-color-alt);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  font-size: var(--lab-l-size);
+  border-radius: calc(var(--main-border-radius) - 3px);
+  -webkit-border-radius: calc(var(--main-border-radius) - 3px);
+  -moz-border-radius: calc(var(--main-border-radius) - 3px);
+  -ms-border-radius: calc(var(--main-border-radius) - 3px);
+  -o-border-radius: calc(var(--main-border-radius) - 3px);
+}
+/* Tab media */
+@media (max-width: 793px) {
+  .account-points .container {
+    max-width: 80%;
+  }
+  .my-points{
+    font-size: var(--tab-l-size);
+  }
+}
+/* mobile media */
+@media (max-width: 597px) {
+  .account-points .container {
+    max-width: 90%;
+  }
+  .my-points{
+    font-size: var(--mob-l-size);
+  }
+}
+.my-points h3 {
+  color: #B18E4B;
+}
+.my-points .points a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.my-points .points a span {
+  color: var(--main-text-color);margin-left: 5px;
+  font-weight: 600;
+}
+.my-points .points a i {
+  color: var(--main-color);
+}
+/* End Points Section  */
+/* Start Account Menu Section   */
+.account-menu .container{
+  max-width: 60%;
+  margin-bottom: 20px;
+}
+.account-menu .menu-items a{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  color: var(--main-text-color);
+  font-size: var(--lab-l-size);
+  transition: all 0.2s ;
+  -webkit-transition: all 0.2s ;
+  -moz-transition: all 0.2s ;
+  -ms-transition: all 0.2s ;
+  -o-transition: all 0.2s ;
+}
+/* Tab media */
+@media (max-width: 793px) {
+  .account-menu .container {
+    max-width: 80%;
+  }
+  .account-menu .menu-items a {
+    font-size: var(--tab-l-size);
+  }
+}
+/* mobile media */
+@media (max-width: 597px) {
+  .account-menu .container {
+    max-width: 90%;
+  }
+  .account-menu .menu-items a {
+    font-size: var(--mob-l-size);
+  }
+}
+.account-menu .menu-items a:hover {
+  margin-right: 30px;
+}
+.account-menu .menu-items li:not(:last-child) {
+  border-bottom: 1px solid var(--seprator-color);
+}
+.account-menu .menu-items a i{
+  color: var(--main-color);
+}
+.account-menu .menu-items a .item{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.account-menu .menu-items .item i{
+  color: var(--disaple-text-color);
+  font-size: var(--lab-m-size);
+  margin-left: 20px;
+}
+/* Tab media */
+@media (max-width: 793px) {
+  .account-menu .menu-items .item i{
+    font-size: var(--tab-m-size);
+  }
+}
+.account-menu .menu-items a:hover .item h5{
+  color: var(--main-color);
+}
+/* End Account Menu Section   */
