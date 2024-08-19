@@ -114,7 +114,7 @@
         </div>
     </header>
     <!-- End Header  -->
-    <div class="account-page">
+    <div class="account-page" style="position: relative;">
         <!-- Start Nav -->
         <nav>
             <div class="container">
@@ -144,26 +144,28 @@
         </nav>
         <!-- End Nav -->
         <!-- Start Ponits Section -->
-         <div class="account-points">
-            <div class="container">
-                <div class="my-points">
-                    <h3>نقاطي:</h3>
-                    <div class="points">
-                        <a href="">
-                            <span>26</span>
-                            <i class="fa-solid fa-gem"></i>                
-                        </a>
+        <div class="account-points">
+            <a href="">
+                <div class="container">
+                    <div class="my-points">
+                        <h3>نقاطي:</h3>
+                        <div class="points">
+                            <a href="">
+                                <span>26</span>
+                                <i class="fa-solid fa-gem"></i>                
+                            </a>
+                        </div>
                     </div>
-                </div>
-             </div>
-         </div>
+                 </div>
+            </a>
+        </div>
         <!-- End Ponits Section -->
         <!-- Start Account Menu Section  -->
-         <div class="account-menu">
+        <div class="account-menu">
             <div class="container">
                 <ul class="menu-items">
                     <li>
-                        <a href="">
+                        <a href="/templates/account-info.html">
                             <div class="item">
                                 <i class="fa-regular fa-user"></i>
                                 <h5> بيانات حسابي </h5>
@@ -190,12 +192,12 @@
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="" id="share-icon" class="share-code-link">
                             <div class="item">
                                 <i class="fa-solid fa-share"></i>
                                 <h5> رمز المشاركة</h5>
                             </div>
-                            <i class="fa-solid fa-angles-left "></i>
+                            <i class="fa-solid fa-angles-left " ></i>
                         </a>
                     </li>
                     <li>
@@ -226,18 +228,39 @@
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="" >
                             <div class="item">
                                 <i class="fa-solid fa-arrow-right-from-bracket"></i>
                                 <h5>تسجيل الخروج </h5>
                             </div>
-                            <i class="fa-solid fa-angles-left "></i>
+                            <i class="fa-solid fa-angles-left fa-regular fa-copy" id="copy-icon"></i>
                         </a>
                     </li>
                 </ul>
             </div>
-         </div>
+        </div>
         <!-- End Account Menu Section  -->
+        <!-- Start Sign-Out Section -->
+        <div class="sign-out">
+            <div class="logo">
+                <img src="/images/name logo.jpg" alt="">
+            </div>
+            <p>هل انت متأكد انك تريد تسجيل الخروج من حسابك؟</p>
+            <div class="choices">
+                <button class="back">تراجع</button>
+                <button class="out">تسجيل الخروج</button>
+            </div>
+        </div>
+        <!-- End Sign-Out Section -->
+        <!-- Start Share-code Section -->
+        <div class="share-code">
+            <div class="logo">
+                <img src="/images/name logo.jpg" alt="">
+            </div>
+            <p>قم بمشاركة الكود التالي مع اصدقاءك واحصل على النقاط كمكافئة!</p>
+            <code>nkws2j429gu3u213r<i class="fa-regular fa-copy"></i></code>
+        </div>
+        <!-- End Share-code Section -->
         <!-- Start Products Section -->
         <hr class="sep">
         <section  id="products">
