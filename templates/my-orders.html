@@ -114,7 +114,7 @@
         </div>
     </header>
     <!-- End Header  -->
-    <div class="account-info-page" style="position: relative;">
+    <div class="my-orders-page" style="position: relative;">
         <!-- Start Nav -->
         <nav>
             <div class="container">
@@ -143,54 +143,77 @@
             </div>
         </nav>
         <!-- End Nav -->
-        <!-- Start Ponits Section -->
-        <div class="account-points">
-            <a href="">
-                <div class="container">
-                    <div class="my-points">
-                        <h3>نقاطي:</h3>
-                        <div class="points">
-                            <a href="">
-                                <span>26</span>
-                                <i class="fa-solid fa-gem"></i>                
-                            </a>
-                        </div>
-                    </div>
-                 </div>
-            </a>
-        </div>
-        <!-- End Ponits Section -->
-        <!-- Start My Info Section  -->
-         <div class="my-info">
+        <!-- Start orders Table  -->
+        <div class="my-orders">
             <div class="container">
-                <div class="my-info-title">
-                    <h2>بيانات حسابي</h2>
-                    <button class="show-delete-menu"><i class="fa-regular fa-trash-can"></i></button>
+                <div class="table-header">
+                    <h1>طلباتي السابقة</h1>
                 </div>
-                <div class="my-info-details">
-                    <div class="details-item">
-                        <div class="title"><p>اسم المستخدم</p><a href=""><i class="fa-solid fa-pen"></i></a></div>
-                        <div class="content">محمد خالد جمال</div>
-                    </div>
-                    <div class="details-item">
-                        <div class="title"><p>رقم الهاتف</p><a href=""><i class="fa-solid fa-pen"></i></a></div>
-                        <div class="content">0929983773</div>
-                    </div>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>رقم الطلب</th>
+                                <th>تاريخ الطلب</th>
+                                <th> عدد المنتجات</th>
+                                <th>إجمالي المبلغ</th>
+                                <th>رؤية الطلب</th>
+                                <th>الحالة</th>
+                                <th>إلغاء</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="order-details in-way">
+                                <td >463878</td>
+                                <td>2024-08-13</td>
+                                <td>12</td>
+                                <td>$1300</td>
+                                <td  class="show"><a href="/templates/order.html"> استعراض</a></td>
+                                <td class="status">جاري الشحن </td>
+                                <td class="cancel">
+                                    <a href="#" class="cancel-me"><i class="fa-regular fa-trash-can "></i></a>
+                                </td>
+                            </tr>
+                            <tr class="order-details done">
+                                <td >3123398</td>
+                                <td>2023-12-05</td>
+                                <td>21</td>
+                                <td>$332</td>
+                                <td  class="show"><a href="/templates/order.html"> استعراض</a></td>
+                                <td class="status">تم التسليم </td>
+                                <td class="cancel">
+                                    <a href="#" class="cancel-me"><i class="fa-regular fa-trash-can "></i></a>
+                                </td>
+                            </tr>
+                            <tr class="order-details canceled">
+                                <td >263298</td>
+                                <td>2020-04-03</td>
+                                <td>1</td>
+                                <td>$200</td>
+                                <td  class="show"><a href="/templates/order.html"> استعراض</a></td>
+                                <td class="status">تم الإلغاء </td>
+                                <td class="cancel">
+                                    <a href="#" class="cancel-me"><i class="fa-regular fa-trash-can "></i></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-         </div>
-        <!-- End My Info Section  -->
-        <!-- Start delete-account Section -->
-        <div class="Pop-up-page  delete-account">
+            </div>
+        </div>
+        <!-- End orders Table  -->
+        <!-- Start cancel-order Section -->
+        <div class="Pop-up-page canciling-order ">
             <div class="logo">
                 <img src="/images/name logo.jpg" alt="">
             </div>
-            <p>هل انت متأكد انك تريد حذف حسابك بشكل نهائي؟</p>
+            <p>هل انت متأكد  من انك تريد إلغاء طلبك؟</p>
             <div class="choices">
                 <button class="back">تراجع</button>
-                <button class="delete">حذف حسابي </button>
+                <button class="cancel-order delete"> إلغاء الطلب </button>
             </div>
         </div>
-        <!-- End delete-account Section -->
+        <!-- End cancel-order Section -->
     </div>
     <!-- Start Footer  -->
     <div class="footer">

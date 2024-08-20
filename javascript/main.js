@@ -40,6 +40,105 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 // ===================================================================================================
+// الكود الخاص بتواصل معنا 
+document.addEventListener('DOMContentLoaded', function () {
+  const contactUsLinks = document.querySelectorAll('.contact-us');
+
+  contactUsLinks.forEach(function (link) {
+      link.addEventListener('click', function (e) {
+          e.preventDefault(); // منع الانتقال الافتراضي للرابط
+          const phoneNumber = '0926295838';
+          const whatsappUrl = `https://wa.me/${phoneNumber}`;
+          window.location.href = whatsappUrl; // توجيه المستخدم إلى رابط واتساب
+      });
+  });
+});
+
+// ==========================================================================
+// الكود الخاص بإظهار صفحة حذف الحساب 
+document.addEventListener('DOMContentLoaded', function () {
+  const deleteMenu = document.querySelector('.delete-account');
+  const deleteLink = document.querySelector('.show-delete-menu');
+  const backButton = document.querySelector('.delete-account .back');
+  const outButton = document.querySelector('.delete-account .delete');
+
+  function showDeleteMenu() {
+      deleteMenu.style.display = 'block'; // يعرض العنصر
+      setTimeout(() => {
+          deleteMenu.style.visibility = 'visible'; // يجعل العنصر مرئيًا
+          deleteMenu.style.opacity = '1'; // يضبط الشفافية لتظهر بشكل كامل
+          deleteMenu.style.transform = 'translate(-50%, -50%) scale(1)'; // يضبط الحجم ليصل للحجم الطبيعي
+      }, 10); // التأخير لتطبيق التحول بشكل صحيح
+  }
+
+  function hideDeleteMenu() {
+      deleteMenu.style.opacity = '0'; // يضبط الشفافية لتختفي
+      deleteMenu.style.transform = 'translate(-50%, -50%) scale(0.5)'; // يصغر الحجم مرة أخرى
+      setTimeout(() => {
+          deleteMenu.style.visibility = 'hidden'; // يخفي العنصر
+          deleteMenu.style.display = 'none'; // يزيل العنصر من التدفق الطبيعي للصفحة
+      }, 300); // يجب أن يتطابق مع مدة الـ transition في CSS
+  }
+
+    deleteLink.addEventListener('click', function (e) {
+      e.preventDefault();
+      if (deleteMenu.style.visibility === 'hidden' || deleteMenu.style.visibility === '') {
+          showDeleteMenu();
+      }
+  });
+
+  backButton.addEventListener('click', hideDeleteMenu);
+  outButton.addEventListener('click', hideDeleteMenu);
+
+  document.addEventListener('click', function (e) {
+      if (deleteMenu.style.visibility === 'visible' && !deleteMenu.contains(e.target) && !deleteLink.contains(e.target)) {
+        hideDeleteMenu();
+      }
+  });
+});
+// ===================================================================================================
+// الكود الخاص بإظهار صفحة  إلغاء الطلب 
+document.addEventListener('DOMContentLoaded', function () {
+  const CancelMenu = document.querySelector('.canciling-order');
+  const CancelLink = document.querySelector('.in-way .cancel .cancel-me');
+  const backButton = document.querySelector('.canciling-order .back');
+  const CancelButton = document.querySelector('.canciling-order .cancel-order');
+
+  function showCancelMenu() {
+      CancelMenu.style.display = 'block'; // يعرض العنصر
+      setTimeout(() => {
+          CancelMenu.style.visibility = 'visible'; // يجعل العنصر مرئيًا
+          CancelMenu.style.opacity = '1'; // يضبط الشفافية لتظهر بشكل كامل
+          CancelMenu.style.transform = 'translate(-50%, -50%) scale(1)'; // يضبط الحجم ليصل للحجم الطبيعي
+      }, 10); // التأخير لتطبيق التحول بشكل صحيح
+  }
+
+  function hideCancilMenu() {
+      CancelMenu.style.opacity = '0'; // يضبط الشفافية لتختفي
+      CancelMenu.style.transform = 'translate(-50%, -50%) scale(0.5)'; // يصغر الحجم مرة أخرى
+      setTimeout(() => {
+          CancelMenu.style.visibility = 'hidden'; // يخفي العنصر
+          CancelMenu.style.display = 'none'; // يزيل العنصر من التدفق الطبيعي للصفحة
+      }, 300); // يجب أن يتطابق مع مدة الـ transition في CSS
+  }
+
+    CancelLink.addEventListener('click', function (e) {
+      e.preventDefault();
+      if (CancelMenu.style.visibility === 'hidden' || CancelMenu.style.visibility === '') {
+        showCancelMenu();
+      }
+  });
+
+  backButton.addEventListener('click', hideCancilMenu);
+  CancelButton.addEventListener('click', hideCancilMenu);
+
+  document.addEventListener('click', function (e) {
+      if (CancelMenu.style.visibility === 'visible' && !CancelMenu.contains(e.target) && !CancelLink.contains(e.target)) {
+        hideCancilMenu();
+      }
+  });
+});
+// ===================================================================================================
 // الكود الخاص بعرض النافذة الخاصة بمشاركة كود الدعوة
 document.addEventListener('DOMContentLoaded', function () {
     const shareCodeMenu = document.querySelector('.share-code');
@@ -72,7 +171,6 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
 
-
     if (shareCodeLink) { // تحقق من وجود العنصر
       shareCodeLink.addEventListener('click', function (e) {
           e.preventDefault();
@@ -81,10 +179,6 @@ document.addEventListener('DOMContentLoaded', function () {
           }
       });
   }
-
-
-
-
     // نسخ محتوى الكود عند النقر على أيقونة النسخ
     if (copyIcon) { // تحقق من وجود العنصر
         copyIcon.addEventListener('click', function () {
@@ -97,6 +191,104 @@ document.addEventListener('DOMContentLoaded', function () {
             alert('تم نسخ الكود بنجاح!');
         });
     }
+});
+
+// ========================================================================================================= 
+// الكود الخاص بصفحة التحقق من رقم الهاتف
+document.addEventListener('DOMContentLoaded', function () {
+  const verifMenu = document.querySelector('.verif-code');
+  const verifLinks = document.querySelectorAll('.verif-link');
+  const verifButtons = document.querySelectorAll('.verif-code .try-code');
+
+  function showVerifMenu() {
+      verifMenu.style.display = 'block';
+      setTimeout(() => {
+          verifMenu.style.visibility = 'visible';
+          verifMenu.style.opacity = '1';
+          verifMenu.style.transform = 'translate(-50%, -50%) scale(1)';
+      }, 10);
+  }
+
+  function hideVerifMenu() {
+      verifMenu.style.opacity = '0';
+      verifMenu.style.transform = 'translate(-50%, -50%) scale(0.5)';
+      setTimeout(() => {
+          verifMenu.style.visibility = 'hidden';
+          verifMenu.style.display = 'none';
+      }, 300);
+  }
+
+  verifLinks.forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      if (verifMenu.style.visibility === 'hidden' || verifMenu.style.visibility === '') {
+          showVerifMenu();
+      }
+    });
+  });
+
+  verifButtons.forEach(button => {
+    button.addEventListener('click', hideVerifMenu);
+  });
+
+  document.addEventListener('click', function (e) {
+      if (verifMenu.style.visibility === 'visible' && !verifMenu.contains(e.target) && !Array.from(verifLinks).some(link => link.contains(e.target))) {
+          hideVerifMenu();
+      }
+  });
+});
+
+// ===================================================================================================
+// الكود الخاص بعرض النافذة الخاصة  بتحميل التطبيق
+document.addEventListener('DOMContentLoaded', function () {
+    const downloadMenu = document.querySelector('.download-fikra-page');
+    const downloadLink = document.querySelector('.download-fikra-link');
+
+    function showDownloadMenu() {
+      downloadMenu.style.display = 'block'; // عرض القائمة
+      setTimeout(() => {
+          downloadMenu.style.visibility = 'visible';
+          downloadMenu.style.opacity = '1';
+          downloadMenu.style.transform = 'translate(-50%, -40%) scale(1)';
+      }, 10);
+    }
+    // عرض القائمة عند النقر على رابط "رمز المشاركة"
+    function hideDownloadMenu() {
+      downloadMenu.style.opacity = '0';
+      downloadMenu.style.transform = 'translate(-50%, -40%) scale(0.5)';
+      setTimeout(() => {
+          downloadMenu.style.visibility = 'hidden';
+          downloadMenu.style.display = 'none';
+      }, 300);
+    }
+
+    // إخفاء القائمة عند النقر على أي مكان خارجها
+    document.addEventListener('click', function (e) {
+      if (downloadMenu.style.visibility === 'visible' && !downloadMenu.contains(e.target) && !downloadLink.contains(e.target)) {
+          hideDownloadMenu();
+      }
+    });
+
+    if (downloadLink) { // تحقق من وجود العنصر
+      downloadLink.addEventListener('click', function (e) {
+          e.preventDefault();
+          if (downloadMenu.style.visibility === 'hidden' || downloadMenu.style.visibility === '') {
+              showDownloadMenu();
+          }
+      });
+  }
+});
+// =========================================================================================================
+//  انشاء تأثير قلب البطاقة لصفحة تسجيل الدخول 
+document.addEventListener('DOMContentLoaded', function() {
+  const flipButtons = document.querySelectorAll('.flip');
+  const signCard = document.querySelector('.sign-card');
+
+  flipButtons.forEach(button => {
+      button.addEventListener('click', function() {
+          signCard.classList.toggle('rotate');
+      });
+  });
 });
 
 // ========================================================================================================= 
@@ -309,4 +501,3 @@ updateReceiptVisibility();
 
 // استدعاء الوظيفة عند تغيير حجم الشاشة
 window.addEventListener('resize', updateReceiptVisibility);
-
