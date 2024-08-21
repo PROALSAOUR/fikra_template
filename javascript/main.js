@@ -239,6 +239,23 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // ===================================================================================================
+// كود صفحة الاسئلة الشائعة
+function toggleContent(element) {
+  const content = element.nextElementSibling;
+  const icon = element.querySelector('i');
+
+  if (content.style.display === "block") {
+      content.style.display = "none";
+      icon.classList.remove('fa-chevron-up');
+      icon.classList.add('fa-chevron-down');
+  } else {
+      content.style.display = "block";
+      icon.classList.remove('fa-chevron-down');
+      icon.classList.add('fa-chevron-up');
+  }
+}
+
+// ===================================================================================================
 // الكود الخاص بعرض النافذة الخاصة  بتحميل التطبيق
 document.addEventListener('DOMContentLoaded', function () {
     const downloadMenu = document.querySelector('.download-fikra-page');
