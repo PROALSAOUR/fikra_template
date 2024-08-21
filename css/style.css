@@ -4137,7 +4137,9 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 /* إخفاء السهمين في Firefox */
 input[type="number"] {
+    -webkit-appearance: textfield;
     -moz-appearance: textfield;
+    appearance: textfield;
 }
 /* Tab media */
 @media (max-width: 768px) {
