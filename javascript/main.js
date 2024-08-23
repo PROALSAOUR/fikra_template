@@ -295,6 +295,46 @@ document.addEventListener('DOMContentLoaded', function () {
       });
   }
 });
+// ===================================================================================================
+// الكود الخاص بعرض النافذة الخاصة  إضافة الى السلة 
+document.addEventListener('DOMContentLoaded', function () {
+    const Menu = document.querySelector('.add-cart-pop-page');
+    const Link = document.querySelector('.add-cart-pop-link');
+
+    function showMenu() {
+      Menu.style.display = 'block'; // عرض القائمة
+      setTimeout(() => {
+          Menu.style.visibility = 'visible';
+          Menu.style.opacity = '1';
+          Menu.style.transform = 'translate(-50%, -40%) scale(1)';
+      }, 10);
+    }
+    // عرض القائمة عند النقر على رابط "رمز المشاركة"
+    function hideMenu() {
+      Menu.style.opacity = '0';
+      Menu.style.transform = 'translate(-50%, -40%) scale(0.5)';
+      setTimeout(() => {
+          Menu.style.visibility = 'hidden';
+          Menu.style.display = 'none';
+      }, 300);
+    }
+
+    // إخفاء القائمة عند النقر على أي مكان خارجها
+    document.addEventListener('click', function (e) {
+      if (Menu.style.visibility === 'visible' && !Menu.contains(e.target) && !Link.contains(e.target)) {
+          hideMenu();
+      }
+    });
+
+    if (Link) { // تحقق من وجود العنصر
+      Link.addEventListener('click', function (e) {
+          e.preventDefault();
+          if (Menu.style.visibility === 'hidden' || Menu.style.visibility === '') {
+              showMenu();
+          }
+      });
+  }
+});
 // =========================================================================================================
 //  انشاء تأثير قلب البطاقة لصفحة تسجيل الدخول 
 document.addEventListener('DOMContentLoaded', function() {
@@ -305,6 +345,46 @@ document.addEventListener('DOMContentLoaded', function() {
       button.addEventListener('click', function() {
           signCard.classList.toggle('rotate');
       });
+  });
+});
+
+// ========================================================================================================= 
+// تفعيل Swiper.js للسلايدر الرئيسي
+const mainSwiper = new Swiper('.main-slider', {
+  loop: true, // يجعل السلايدر دائريًا
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  autoplay: {
+    delay: 5000, // تبديل الصورة تلقائيًا كل 30 ثانية
+    disableOnInteraction: false,
+  },
+});
+// تفعيل Swiper.js للصور الثانوية
+const thumbnailSwiper = new Swiper('.thumbnail-slider', {
+  slidesPerView: 4, // عدد الصور الظاهرة في العرض الواحد
+  spaceBetween: 10, // المسافة بين الصور
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  loop: false,
+});
+
+// جافا سكريبت لتبديل الصور عند النقر على الصور الثانوية
+document.querySelectorAll('.thumbnail').forEach((thumbnail, index) => {
+  thumbnail.addEventListener('click', () => {
+    mainSwiper.slideToLoop(index, 500, false); // التبديل إلى الصورة المحددة
+  });
+});
+
+// تحديث الصورة الرئيسية عند التمرير في السلايدر الرئيسي
+mainSwiper.on('slideChange', () => {
+  const activeIndex = mainSwiper.realIndex;
+  thumbnailSwiper.slideTo(activeIndex, 500);
+  document.querySelectorAll('.thumbnail').forEach((thumb, index) => {
+    thumb.parentElement.classList.toggle('swiper-slide-active', index === activeIndex);
   });
 });
 
@@ -462,7 +542,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
-
+// =============================================================================================
 // تحديد التشيك بوكس والفاتورة
 const showCheckbox = document.querySelector('#show');
 const receipt = document.querySelector('.receipt');
@@ -518,3 +598,5 @@ updateReceiptVisibility();
 
 // استدعاء الوظيفة عند تغيير حجم الشاشة
 window.addEventListener('resize', updateReceiptVisibility);
+
+// =============================================================================================
