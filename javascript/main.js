@@ -298,35 +298,41 @@ document.addEventListener('DOMContentLoaded', function () {
 // ===================================================================================================
 // الكود الخاص بعرض النافذة الخاصة  إضافة الى السلة 
 document.addEventListener('DOMContentLoaded', function () {
-    const Menu = document.querySelector('.add-cart-pop-page');
-    const Link = document.querySelector('.add-cart-pop-link');
+  const Menu = document.querySelector('.add-cart-pop-page');
+  const Link = document.querySelector('.add-cart-pop-link');
 
-    function showMenu() {
+  let hideTimeout; // متغير لتخزين مؤقت الإخفاء
+
+  function showMenu() {
       Menu.style.display = 'block'; // عرض القائمة
       setTimeout(() => {
           Menu.style.visibility = 'visible';
           Menu.style.opacity = '1';
           Menu.style.transform = 'translate(-50%, -40%) scale(1)';
       }, 10);
-    }
-    // عرض القائمة عند النقر على رابط "رمز المشاركة"
-    function hideMenu() {
+
+      // إعداد مؤقت للإخفاء بعد 5 ثوانٍ من ظهور القائمة
+      clearTimeout(hideTimeout);
+      hideTimeout = setTimeout(hideMenu, 3000);
+  }
+
+  function hideMenu() {
       Menu.style.opacity = '0';
       Menu.style.transform = 'translate(-50%, -40%) scale(0.5)';
       setTimeout(() => {
           Menu.style.visibility = 'hidden';
           Menu.style.display = 'none';
       }, 300);
-    }
+  }
 
-    // إخفاء القائمة عند النقر على أي مكان خارجها
-    document.addEventListener('click', function (e) {
+  // إخفاء القائمة عند النقر على أي مكان خارجها
+  document.addEventListener('click', function (e) {
       if (Menu.style.visibility === 'visible' && !Menu.contains(e.target) && !Link.contains(e.target)) {
           hideMenu();
       }
-    });
+  });
 
-    if (Link) { // تحقق من وجود العنصر
+  if (Link) { // تحقق من وجود العنصر
       Link.addEventListener('click', function (e) {
           e.preventDefault();
           if (Menu.style.visibility === 'hidden' || Menu.style.visibility === '') {
@@ -335,6 +341,53 @@ document.addEventListener('DOMContentLoaded', function () {
       });
   }
 });
+// ===================================================================================================
+// الكود الخاص بعرض النافذة الخاصة  اتمام عملية الطلب بنجاح  
+document.addEventListener('DOMContentLoaded', function () {
+  const Menu = document.querySelector('.ordered-done-pop-page');
+  const Link = document.querySelector('.ordered-done-link');
+
+  let hideTimeout; // متغير لتخزين مؤقت الإخفاء
+
+  function showMenu() {
+      Menu.style.display = 'block'; // عرض القائمة
+      setTimeout(() => {
+          Menu.style.visibility = 'visible';
+          Menu.style.opacity = '1';
+          Menu.style.transform = 'translate(-50%, -40%) scale(1)';
+      }, 10);
+
+      // إعداد مؤقت للإخفاء بعد 5 ثوانٍ من ظهور القائمة
+      clearTimeout(hideTimeout);
+      hideTimeout = setTimeout(hideMenu, 3000);
+  }
+
+  function hideMenu() {
+      Menu.style.opacity = '0';
+      Menu.style.transform = 'translate(-50%, -40%) scale(0.5)';
+      setTimeout(() => {
+          Menu.style.visibility = 'hidden';
+          Menu.style.display = 'none';
+      }, 300);
+  }
+
+  // إخفاء القائمة عند النقر على أي مكان خارجها
+  document.addEventListener('click', function (e) {
+      if (Menu.style.visibility === 'visible' && !Menu.contains(e.target) && !Link.contains(e.target)) {
+          hideMenu();
+      }
+  });
+
+  if (Link) { // تحقق من وجود العنصر
+      Link.addEventListener('click', function (e) {
+          e.preventDefault();
+          if (Menu.style.visibility === 'hidden' || Menu.style.visibility === '') {
+              showMenu();
+          }
+      });
+  }
+});
+
 // =========================================================================================================
 //  انشاء تأثير قلب البطاقة لصفحة تسجيل الدخول 
 document.addEventListener('DOMContentLoaded', function() {
@@ -395,6 +448,13 @@ document.addEventListener('DOMContentLoaded', function() {
   const sideMenu = document.querySelector('.mega-menu');
   const sideMenuCheckbox = document.getElementById('side-menu');
 
+  // إعداد سلايدر المنتجات
+  var ProductSlider = new Swiper('.products-slider', {
+    grabCursor: true,
+    slidesPerView: 'auto',
+    loopAdditionalSlides: 30, // لجعل الحركة أكثر سلاسة
+  });
+    
   // تحقق من وجود الكلاس في localStorage واضف الكلاس إلى body إذا كان موجودًا
   if (localStorage.getItem('them') === 'light') {
     body.classList.add('light-them');
@@ -471,12 +531,7 @@ document.addEventListener('DOMContentLoaded', function() {
     freeMode: true, // تفعيل الوضع الحر لضمان الحركة المستمرة
   });
 
-  // إعداد سلايدر المنتجات
-  var ProductSlider = new Swiper('.products-slider', {
-    grabCursor: true,
-    slidesPerView: 'auto',
-    loopAdditionalSlides: 30, // لجعل الحركة أكثر سلاسة
-  });
+
 
   // التعامل مع قائمة الفلاتر
   const filterToggle = document.querySelector('.filter-toggle');

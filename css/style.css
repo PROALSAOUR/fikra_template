@@ -670,7 +670,7 @@ select option::selection {
 }
 .Pop-up-page .logo {
   width: 200px;
-  margin: 10px auto 40px;
+  margin: 10px auto 30px;
 }
 .Pop-up-page .logo img{
   width: 100%;
@@ -714,6 +714,7 @@ select option::selection {
   }
   .Pop-up-page .logo {
     width: 150px;
+    margin-bottom: 10px;
   }
   .Pop-up-page p {
     font-size: var(--tab-l-size);
@@ -747,6 +748,7 @@ select option::selection {
   }
   .Pop-up-page .logo {
     width: 180px;
+    margin-bottom: -30px;
   }
   .Pop-up-page p {
     margin-top: 60px;
@@ -2764,7 +2766,7 @@ hr.sep {
   }
 }
 /* for very large screen */
-@media (min-width: 903px) {
+@media (min-width: 923px) {
   .favorite .specific {
     width: 75%;
   }
@@ -2791,9 +2793,37 @@ hr.sep {
 }
 /* End fav-products  */
 /* ====================================  Cart Page  ========================================================== */
+/* Start product size & color  */
+.cart .specific .product-box .product-info .product-price {
+  bottom: 10%;
+}
+.cart .product-info .product-size , .cart .product-info .product-color {
+  font-size: var(--lab-m-size);
+  color: var(--main-text-color);
+  margin-bottom: 10px;
+  padding-right: 5px;
+}
+.cart .product-info .product-size span{
+  color: var(--main-color);
+  margin-right: 15px;
+}
+.cart .product-info .product-color span{
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  margin-right: 40px;
+  color: transparent;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5;
+}
+/* End product size & color  */
 /* Start cart Nav */
 /*  large screen */
-@media (min-width: 793px) {
+@media (min-width: 890px) {
   .go-confirm-order { 
     display: none;
     visibility: hidden;
@@ -2902,9 +2932,6 @@ hr.sep {
 }
 /* End cart Nav */
 /* Start change quantity button  */
-.cart .specific .product-box .product-info .product-price {
-  bottom: 45%;
-}
 .cart .product-box .quantity {
   display: flex;
   align-items: center;
@@ -2957,7 +2984,6 @@ hr.sep {
 }
 /* End change quantity button  */
 /* Start order confirm  */
-
 /*  large screen */
 @media (min-width: 793px) {
   .cart .searched-products .container {
@@ -3001,7 +3027,7 @@ hr.sep {
   -o-transition: all 0.3s;
 }
 /* Tab media */
-@media (max-width: 793px) {
+@media (max-width: 890px) {
   .cart .searched-products {
     flex-direction: column;
   }
@@ -3152,6 +3178,25 @@ hr.sep {
   margin: 15px auto ;
 }
 /* End order confirm  */
+/* Start add-cart-pop-page Section */
+.ordered-done-pop-page p {
+  text-align: center;
+}
+.ordered-done-pop-page i {
+  font-size: calc(var(--lab-xxl-size) + 4px);
+  color: #1d9f4d;
+  width: 100%;
+  text-align: center;
+  margin: 10px;
+}
+.ordered-done-pop-page .confirm-order-message {
+  font-size: var(--mob-xs-size) ;
+  color: var(--disaple-text-color);
+  width: 70%;
+  text-align: center;
+  margin: 0 auto;
+}
+/* End add-cart-pop-page Section */
 /* ====================================  Account Page  ========================================================== */
 /* Strat Points Section  */
 .account-points .container {
@@ -3920,19 +3965,24 @@ hr.sep {
   -moz-transition: 1s transform;
   -ms-transition: 1s transform;
   -o-transition: 1s transform;
+  border-radius: var(--main-border-radius);
+  -webkit-border-radius: var(--main-border-radius);
+  -moz-border-radius: var(--main-border-radius);
+  -ms-border-radius: var(--main-border-radius);
+  -o-border-radius: var(--main-border-radius);
 }
 /* Tab media */
 @media (max-width: 768px) {
   .sign-page .sign-card {
     width: 400px;
-    height: 430px;
+    height: 440px;
   }
 }
 /* mobile media */
 @media (max-width: 597px) {
   .sign-page .sign-card {
     width: 320px;
-    height: 360px;
+    height: 380px;
   }
 }
 .sign-page .sign-card .sign-in-face, .sign-page .sign-card .log-in-face{
@@ -4006,7 +4056,17 @@ hr.sep {
 .sign-page .sign-card form{
   width: 100%;
 }
-.sign-page .sign-card span{
+.sign-page .sign-card .read-policy{
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  font-size: var(--tab-s-size);
+  cursor: pointer;
+  font-weight: 800;
+  color: #1877f2;
+  text-decoration: underline;
+}
+.sign-page .sign-card span {
   position: absolute;
   left: 10px;
   bottom: 10px;
@@ -4014,6 +4074,7 @@ hr.sep {
   font-size: var(--tab-s-size);
   font-weight: 800;
   cursor: pointer;
+  text-decoration: underline;
 }
 .sign-page .sign-card form {
   display: flex;
@@ -4024,6 +4085,14 @@ hr.sep {
   flex-direction: column;
   padding:0 20px;
   margin-bottom: 30px;
+}
+.sign-page .sign-card form .name {
+  flex-direction: row;
+  margin-top: 20px;
+}
+.sign-page .sign-card form .name .first-name, .sign-card form .name .last-name {
+  display: flex;
+  flex-direction: column;
 }
 .sign-page .sign-card form label {
   margin-bottom: 12px;
@@ -4056,6 +4125,9 @@ hr.sep {
     font-size: var(--tab-l-size);
   }
   .sign-page .sign-card span{
+    font-size: var(--mob-s-size);
+  }
+  .sign-page .sign-card .read-policy {
     font-size: var(--mob-s-size);
   }
   .sign-page .sign-card form .name , .sign-card form .phone-number{
