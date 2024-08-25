@@ -1,10 +1,35 @@
-/* 
-      الفهرس
-
+/*       الفهرس
       
-
+    190   product box
+    470   specific box
+    690   pop pages
+    840   header
+    1010  mega menu
+    1520  nav
+    1600  ads
+    1760  brands
+    1815  product sections
+    1912  footer
+    2310  search bar
+    2600  search products
+    2660  search paginations
+    2750  fav search bar
+    2800  fav product
+    2900  cart 
+    2970  cart nav
+    3140  cart order-confirm
+    3330  cart pop-pages
+    3360  account points
+    3420  account menu
+    3485  account share-code
+    3520  my-info
+    3800  orders table page
+    3940  order details page
+    4120  sign-page
+    4320  confirm phone code
+    4430  blog
+    4700  product details page
 */
-
 /* Start Varibules */
 :root {
   /* colors */
@@ -15,6 +40,7 @@
   --background-color-alt: #292929;
   --seprator-color: #484848;
   --nav-icon-color: #ffffff;
+  --add-fav: #46464663;
   /* labtop sizing varibules  */
   --lab-xxl-size: 48px;
   --lab-xl-size: 32px;
@@ -102,10 +128,10 @@ input{
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
+  color: var(--main-text-color);
 }
 input:focus{
   outline: 2px solid var(--main-color) ;
-  color: var(--main-text-color);
   caret-color: var(--main-color);  
 }
 input::placeholder{
@@ -230,7 +256,7 @@ select option::selection {
   top: 2%;
   right: 3%;
   padding:4px 4px 2px;
-  background-color: var(--seprator-color);
+  background-color: var(--add-fav);
   border-radius:5px;
   -webkit-border-radius:5px;
   -moz-border-radius:5px;
@@ -433,7 +459,7 @@ select option::selection {
     bottom: 10px;
   }
   .product-box .add-to-cart a{
-    padding: 2px 8px 4px;
+    padding: 5px 8px;
   }
   .product-box .add-to-cart span {
     font-size: var(--mob-s-size);
@@ -2456,6 +2482,28 @@ hr.sep {
     font-size: var(--mob-l-size);
   }
 }
+/* medium phone */
+@media (max-width: 467px) {
+  .search-bar .filter-options {
+    max-height: 650px;
+  }
+}
+/* small phone */
+@media (max-width: 392px) {
+  .search-bar .filter-options {
+    max-height: 630px;
+    width: 300px;
+    max-width: 300px;
+  }
+}
+/* very small phone */
+@media (max-width: 362px) {
+  .search-bar .filter-options {
+    max-height: 610px;
+    width: 260px;
+    max-width: 260px;
+  }
+}
 .search-bar .filter-tabs {
   display: flex;
   gap: 10px;
@@ -2570,7 +2618,6 @@ hr.sep {
 /* End Search Bar */
 /* Start Searched-products  */
 .search .searched-products {
-  /* position: relative; */
   margin: 30px 0;
   display: flex;
   justify-content: center;
@@ -2804,7 +2851,6 @@ hr.sep {
     display: flex;
     flex-direction: row;
   }
-  /* qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq */
   .favorite .product-box .add-to-fav {
     top: 5%;
     right: 95%;
@@ -4746,8 +4792,6 @@ input[type="number"] {
     border-left: none; 
   }
 }
-
-/* ================================================================================================== */
 .product-details-page .product-slider {
   width: 100%;
   max-width: 700px;
@@ -4764,7 +4808,7 @@ input[type="number"] {
 .product-details-page .main-slider img , .product-details-page .thumbnail-slider img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: fill;
   border-radius:5px;
   -webkit-border-radius:5px;
   -moz-border-radius:5px;
@@ -4861,7 +4905,6 @@ input[type="number"] {
     max-width: 500px;
   }
 }
-/* ================================================================================================== */
 /*medium mobile media */
 .product-details-page .product-details .product-images span button {
   position: absolute;

@@ -162,14 +162,15 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
-// ===============================================================================
-// التعامل مع قائمة الفلاتر
+// ========================================================================================================
+//  التعامل مع قائمة الفلاتر بصفحة البحث 
 document.addEventListener('DOMContentLoaded', function () {
   const filterToggle = document.querySelector('.filter-toggle');
   const filterOptions = document.querySelector('.filter-options');
   const closeFilter = document.querySelector('.close-filter');
   const filterTabs = document.querySelectorAll('.filter-tab');
   const filterContent = document.querySelector('.filter-content');
+  const applyFiltersButton = document.querySelector('.apply-filters');
 
   if (filterToggle && filterOptions) {
     // إظهار قائمة الفلترة عند الضغط على الأيقونة
@@ -182,6 +183,14 @@ document.addEventListener('DOMContentLoaded', function () {
   if (closeFilter && filterOptions) {
     // إخفاء قائمة الفلترة عند النقر على زر الإغلاق
     closeFilter.addEventListener('click', function (event) {
+      event.stopPropagation(); // منع النقر من الانتشار إلى الوثيقة
+      filterOptions.style.display = 'none';
+    });
+  }
+
+  if (filterOptions && applyFiltersButton) {
+    // إغلاق قائمة الفلاتر عند النقر على زر apply-filters فقط
+    applyFiltersButton.addEventListener('click', function (event) {
       event.stopPropagation(); // منع النقر من الانتشار إلى الوثيقة
       filterOptions.style.display = 'none';
     });
@@ -229,20 +238,9 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
 
-    // إزالة فلتر عند النقر على نفسه
-    filterContent.addEventListener('click', function (event) {
-      const filterGroup = event.target.closest('.filter-group');
-      if (filterGroup) {
-        filterGroup.remove();
-        const filterTab = Array.from(filterTabs).find(tab => tab.dataset.target === filterGroup.id.replace('active-', ''));
-        if (filterTab) {
-          filterTab.classList.remove('selected');
-        }
-      }
-    });
+  
   }
 });
-
 // =========================================================================================================
 //  انشاء تأثير قلب البطاقة لصفحة تسجيل الدخول 
 document.addEventListener('DOMContentLoaded', function() {
@@ -257,7 +255,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
-
 // =========================================================================================================
 // كود صفحة الاسئلة الشائعة
 function toggleContent(element) {
