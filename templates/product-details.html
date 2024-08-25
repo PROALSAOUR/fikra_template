@@ -27,8 +27,8 @@
             <div class="container">
                 <div class="nav">
                     <div class="nav-item">
-                        <a href="home" id="home" ><i class="fa-solid fa-store"></i></a>
-                        <label for="index.html">الرئيسية</label>
+                        <a href="../index.html" id="home" ><i class="fa-solid fa-store"></i></a>
+                        <label for="home">الرئيسية</label>
                     </div>
                     <div class="nav-item">
                         <a href="cart.html" id="cart"><i class="fa-solid fa-bag-shopping"></i></a>
@@ -63,16 +63,19 @@
                                 <span class="add-to-fav"><button><i class="fa-regular fa-heart"></i></button></span>
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide">
-                                        <img src="/images/dummy_200x200_000000_eaea0e.png" alt="Product Image 3">
+                                        <img src="/images/shoe1.jpg" alt="Product Image 3">
                                     </div>
                                     <div class="swiper-slide">
-                                        <img src="/images/dummy_200x200_000000_8ad8f2.png" alt="Product Image 3">
+                                        <img src="/images/shoe2.jpg" alt="Product Image 3">
                                     </div>
                                     <div class="swiper-slide">
-                                        <img src="/images/dummy_200x200_ffffff_7d26a8.png" alt="Product Image 3">
+                                        <img src="/images/shoe3.jpg" alt="Product Image 3">
                                     </div>
                                     <div class="swiper-slide">
-                                        <img src="/images/dummy_200x200_ffffff_7d26a8.png" alt="Product Image 3">
+                                        <img src="/images/shoe1.jpg" alt="Product Image 3">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="/images/shoe2.jpg" alt="Product Image 3">
                                     </div>
                                 </div>
                             </div>
@@ -80,16 +83,19 @@
                             <div class="swiper-container thumbnail-slider">
                               <div class="swiper-wrapper">
                                 <div class="swiper-slide">
-                                  <img src="/images/dummy_200x200_000000_eaea0e.png" alt="Thumbnail 1" class="thumbnail">
+                                  <img src="/images/shoe1.jpg" alt="Thumbnail 1" class="thumbnail">
                                 </div>
                                 <div class="swiper-slide">
-                                  <img src="/images/dummy_200x200_000000_8ad8f2.png" alt="Thumbnail 2" class="thumbnail">
+                                  <img src="/images/shoe2.jpg" alt="Thumbnail 2" class="thumbnail">
                                 </div>
                                 <div class="swiper-slide">
-                                  <img src="/images/dummy_200x200_ffffff_7d26a8.png" alt="Thumbnail 2" class="thumbnail">
+                                  <img src="/images/shoe3.jpg" alt="Thumbnail 2" class="thumbnail">
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="/images/dummy_200x200_000000_eaea0e.png" alt="Thumbnail 1" class="thumbnail">
+                                    <img src="/images/shoe1.jpg" alt="Thumbnail 1" class="thumbnail">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="/images/shoe2.jpg" alt="Thumbnail 2" class="thumbnail">
                                 </div>
                                 <!-- أضف المزيد من الصور حسب الحاجة -->
                               </div>
@@ -122,7 +128,7 @@
                             <input type="radio" name="size" id="S" value="">
                             <label for="S">S</label>
                         
-                            <input type="radio" name="size" id="M" value="">
+                            <input type="radio" name="size" id="M" value="" checked>
                             <label for="M">M</label>
                         
                             <input type="radio" name="size" id="L" value="">
@@ -143,7 +149,7 @@
                             <input type="radio" name="color" id="red"  value="">
                             <label for="red" name="color" style="background-color: rgb(123, 31, 31); color:transparent;">اللون</label>
                             
-                            <input type="radio" name="color" id="black"  value="">
+                            <input type="radio" name="color" id="black"  value=""  checked>
                             <label for="black" name="color" style="background-color: rgb(12, 11, 11); color:transparent;">اللون</label>
                             
                             <input type="radio" name="color" id="green"  value="" >
@@ -161,183 +167,132 @@
             <!-- Start Products Section -->
             <hr class="sep">
             <section  id="products">
-                    <a href="">
+                    <a href="/templates/search.html">
                         <div class="title">
-                            <h2> منتجات مشابهة </h2>
+                            <h2>جاكات نسائية</h2>
                             <i class="fa-solid fa-angles-left"></i>
                         </div>
                     </a>  
                     <div class="swiper products-slider">
                         <div class="swiper-wrapper">
                             <!-- product-start -->
-                            <div class="swiper-slide product-box ">
-                                <a href="">
-                                    <span class="add-to-fav"><button><i class="fa-regular fa-heart"></i></button></span>
+                            <div class="swiper-slide product-box "> <!-- اضف كلاس اوفر اذا كان هنالك تخفيض- -->
+                                <a href="/templates/product-details.html">
                                     <div class="product-image">
+                                        <div class="off-holder">
+                                            <span>تخفيض</span>
+                                        </div>
                                         <img src="/images/product_holder.png" alt="">
-                                        <span>تخفيض</span>
                                     </div>
                                     <div class="product-info">
-                                        <h4 class="product-name">اسم المنتج</h4>
-                                        <p class="product-description">الوصف الوصف الوصف الوصف  الوصف الوصف الوصف الوصف </p>
-                                        <h4 class="product-price ">
-                                            <div class="buy-by-money"><span class="old"> 45 </span><span class="new"> | 35 </span><span> دل </span></div>
+                                        <h4 class="product-name">جاكيت جلد شيرازي</h4> <!-- اقصى طول 20 حرف -->
+                                        <p class="product-description"> الاصلي جاكيت جلد مصوف من الداخل صناعة تركيا</p> <!-- اقل طول 42 حرف اقصى طول 60 حرف -->
+                                        <h4 class="product-price"> <!-- اضف كلاس بوينت اذا كان سعر اليع نقاط- -->
+                                            <div class="buy-by-money"><span class="old"> 45 </span><span class="new"> | 15 </span><span> دل </span></div>
                                             <div class="buy-by-points">200 <i class="fa-solid fa-gem"></i></div>            
                                         </h4>
                                     </div>
                                 </a> 
+                                <span class="add-to-fav"><a href="/templates/fav.html"><i class="fa-regular fa-heart"></i></a></span>
+                                <span class="add-to-cart">
+                                    <a href="/templates/cart.html"><span> إضافة الى السلة </span><i class="fa-solid fa-cart-shopping"></i> </a>
+                                </span>
                             </div>
                             <!-- product-end -->
                             <!-- product-start -->
-                            <div class="swiper-slide product-box ">
-                                <a href="">
-                                    <span class="add-to-fav"><button><i class="fa-regular fa-heart"></i></button></span>
+                            <div class="swiper-slide product-box "> <!-- اضف كلاس اوفر اذا كان هنالك تخفيض- -->
+                                <a href="/templates/product-details.html">
                                     <div class="product-image">
+                                        <div class="off-holder">
+                                            <span>تخفيض</span>
+                                        </div>
                                         <img src="/images/product_holder.png" alt="">
-                                        <span>تخفيض</span>
                                     </div>
                                     <div class="product-info">
-                                        <h4 class="product-name">اسم المنتج</h4>
-                                        <p class="product-description">الوصف الوصف الوصف الوصف  الوصف الوصف الوصف الوصف </p>
-                                        <h4 class="product-price ">
-                                            <div class="buy-by-money"><span class="old"> 45 </span><span class="new"> | 35 </span><span> دل </span></div>
+                                        <h4 class="product-name">جاكيت جلد شيرازي</h4> <!-- اقصى طول 20 حرف -->
+                                        <p class="product-description"> الاصلي جاكيت جلد مصوف من الداخل صناعة تركيا</p> <!-- اقل طول 42 حرف اقصى طول 60 حرف -->
+                                        <h4 class="product-price"> <!-- اضف كلاس بوينت اذا كان سعر اليع نقاط- -->
+                                            <div class="buy-by-money"><span class="old"> 45 </span><span class="new"> | 15 </span><span> دل </span></div>
                                             <div class="buy-by-points">200 <i class="fa-solid fa-gem"></i></div>            
                                         </h4>
                                     </div>
                                 </a> 
+                                <span class="add-to-fav"><a href="/templates/fav.html"><i class="fa-regular fa-heart"></i></a></span>
+                                <span class="add-to-cart">
+                                    <a href="/templates/cart.html"><span> إضافة الى السلة </span><i class="fa-solid fa-cart-shopping"></i> </a>
+                                </span>
                             </div>
                             <!-- product-end -->
                             <!-- product-start -->
-                            <div class="swiper-slide product-box ">
-                                <a href="">
-                                    <span class="add-to-fav"><button><i class="fa-regular fa-heart"></i></button></span>
+                            <div class="swiper-slide product-box offer"> <!-- اضف كلاس اوفر اذا كان هنالك تخفيض- -->
+                                <a href="/templates/product-details.html">
                                     <div class="product-image">
+                                        <div class="off-holder">
+                                            <span>تخفيض</span>
+                                        </div>
                                         <img src="/images/product_holder.png" alt="">
-                                        <span>تخفيض</span>
                                     </div>
                                     <div class="product-info">
-                                        <h4 class="product-name">اسم المنتج</h4>
-                                        <p class="product-description">الوصف الوصف الوصف الوصف  الوصف الوصف الوصف الوصف </p>
-                                        <h4 class="product-price ">
-                                            <div class="buy-by-money"><span class="old"> 45 </span><span class="new"> | 35 </span><span> دل </span></div>
+                                        <h4 class="product-name">جاكيت جلد شيرازي</h4> <!-- اقصى طول 20 حرف -->
+                                        <p class="product-description"> الاصلي جاكيت جلد مصوف من الداخل صناعة تركيا</p> <!-- اقل طول 42 حرف اقصى طول 60 حرف -->
+                                        <h4 class="product-price"> <!-- اضف كلاس بوينت اذا كان سعر اليع نقاط- -->
+                                            <div class="buy-by-money"><span class="old"> 45 </span><span class="new"> | 15 </span><span> دل </span></div>
                                             <div class="buy-by-points">200 <i class="fa-solid fa-gem"></i></div>            
                                         </h4>
                                     </div>
                                 </a> 
+                                <span class="add-to-fav"><a href="/templates/fav.html"><i class="fa-regular fa-heart"></i></a></span>
+                                <span class="add-to-cart">
+                                    <a href="/templates/cart.html"><span> إضافة الى السلة </span><i class="fa-solid fa-cart-shopping"></i> </a>
+                                </span>
                             </div>
                             <!-- product-end -->
                             <!-- product-start -->
-                            <div class="swiper-slide product-box ">
-                                <a href="">
-                                    <span class="add-to-fav"><button><i class="fa-regular fa-heart"></i></button></span>
+                            <div class="swiper-slide product-box "> <!-- اضف كلاس اوفر اذا كان هنالك تخفيض- -->
+                                <a href="/templates/product-details.html">
                                     <div class="product-image">
+                                        <div class="off-holder">
+                                            <span>تخفيض</span>
+                                        </div>
                                         <img src="/images/product_holder.png" alt="">
-                                        <span>تخفيض</span>
                                     </div>
                                     <div class="product-info">
-                                        <h4 class="product-name">اسم المنتج</h4>
-                                        <p class="product-description">الوصف الوصف الوصف الوصف  الوصف الوصف الوصف الوصف </p>
-                                        <h4 class="product-price ">
-                                            <div class="buy-by-money"><span class="old"> 45 </span><span class="new"> | 35 </span><span> دل </span></div>
+                                        <h4 class="product-name">جاكيت جلد شيرازي</h4> <!-- اقصى طول 20 حرف -->
+                                        <p class="product-description"> الاصلي جاكيت جلد مصوف من الداخل صناعة تركيا</p> <!-- اقل طول 42 حرف اقصى طول 60 حرف -->
+                                        <h4 class="product-price"> <!-- اضف كلاس بوينت اذا كان سعر اليع نقاط- -->
+                                            <div class="buy-by-money"><span class="old"> 45 </span><span class="new"> | 15 </span><span> دل </span></div>
                                             <div class="buy-by-points">200 <i class="fa-solid fa-gem"></i></div>            
                                         </h4>
                                     </div>
                                 </a> 
+                                <span class="add-to-fav"><a href="/templates/fav.html"><i class="fa-regular fa-heart"></i></a></span>
+                                <span class="add-to-cart">
+                                    <a href="/templates/cart.html"><span> إضافة الى السلة </span><i class="fa-solid fa-cart-shopping"></i> </a>
+                                </span>
                             </div>
                             <!-- product-end -->
                             <!-- product-start -->
-                            <div class="swiper-slide product-box ">
-                                <a href="">
-                                    <span class="add-to-fav"><button><i class="fa-regular fa-heart"></i></button></span>
+                            <div class="swiper-slide product-box "> <!-- اضف كلاس اوفر اذا كان هنالك تخفيض- -->
+                                <a href="/templates/product-details.html">
                                     <div class="product-image">
+                                        <div class="off-holder">
+                                            <span>تخفيض</span>
+                                        </div>
                                         <img src="/images/product_holder.png" alt="">
-                                        <span>تخفيض</span>
                                     </div>
                                     <div class="product-info">
-                                        <h4 class="product-name">اسم المنتج</h4>
-                                        <p class="product-description">الوصف الوصف الوصف الوصف  الوصف الوصف الوصف الوصف </p>
-                                        <h4 class="product-price ">
-                                            <div class="buy-by-money"><span class="old"> 45 </span><span class="new"> | 35 </span><span> دل </span></div>
+                                        <h4 class="product-name">جاكيت جلد شيرازي</h4> <!-- اقصى طول 20 حرف -->
+                                        <p class="product-description"> الاصلي جاكيت جلد مصوف من الداخل صناعة تركيا</p> <!-- اقل طول 42 حرف اقصى طول 60 حرف -->
+                                        <h4 class="product-price"> <!-- اضف كلاس بوينت اذا كان سعر اليع نقاط- -->
+                                            <div class="buy-by-money"><span class="old"> 45 </span><span class="new"> | 15 </span><span> دل </span></div>
                                             <div class="buy-by-points">200 <i class="fa-solid fa-gem"></i></div>            
                                         </h4>
                                     </div>
                                 </a> 
-                            </div>
-                            <!-- product-end -->
-                            <!-- product-start -->
-                            <div class="swiper-slide product-box ">
-                                <a href="">
-                                    <span class="add-to-fav"><button><i class="fa-regular fa-heart"></i></button></span>
-                                    <div class="product-image">
-                                        <img src="/images/product_holder.png" alt="">
-                                        <span>تخفيض</span>
-                                    </div>
-                                    <div class="product-info">
-                                        <h4 class="product-name">اسم المنتج</h4>
-                                        <p class="product-description">الوصف الوصف الوصف الوصف  الوصف الوصف الوصف الوصف </p>
-                                        <h4 class="product-price ">
-                                            <div class="buy-by-money"><span class="old"> 45 </span><span class="new"> | 35 </span><span> دل </span></div>
-                                            <div class="buy-by-points">200 <i class="fa-solid fa-gem"></i></div>            
-                                        </h4>
-                                    </div>
-                                </a> 
-                            </div>
-                            <!-- product-end -->
-                            <!-- product-start -->
-                            <div class="swiper-slide product-box ">
-                                <a href="">
-                                    <span class="add-to-fav"><button><i class="fa-regular fa-heart"></i></button></span>
-                                    <div class="product-image">
-                                        <img src="/images/product_holder.png" alt="">
-                                        <span>تخفيض</span>
-                                    </div>
-                                    <div class="product-info">
-                                        <h4 class="product-name">اسم المنتج</h4>
-                                        <p class="product-description">الوصف الوصف الوصف الوصف  الوصف الوصف الوصف الوصف </p>
-                                        <h4 class="product-price ">
-                                            <div class="buy-by-money"><span class="old"> 45 </span><span class="new"> | 35 </span><span> دل </span></div>
-                                            <div class="buy-by-points">200 <i class="fa-solid fa-gem"></i></div>            
-                                        </h4>
-                                    </div>
-                                </a> 
-                            </div>
-                            <!-- product-end -->
-                            <!-- product-start -->
-                            <div class="swiper-slide product-box ">
-                                <a href="">
-                                    <span class="add-to-fav"><button><i class="fa-regular fa-heart"></i></button></span>
-                                    <div class="product-image">
-                                        <img src="/images/product_holder.png" alt="">
-                                        <span>تخفيض</span>
-                                    </div>
-                                    <div class="product-info">
-                                        <h4 class="product-name">اسم المنتج</h4>
-                                        <p class="product-description">الوصف الوصف الوصف الوصف  الوصف الوصف الوصف الوصف </p>
-                                        <h4 class="product-price ">
-                                            <div class="buy-by-money"><span class="old"> 45 </span><span class="new"> | 35 </span><span> دل </span></div>
-                                            <div class="buy-by-points">200 <i class="fa-solid fa-gem"></i></div>            
-                                        </h4>
-                                    </div>
-                                </a> 
-                            </div>
-                            <!-- product-end -->
-                            <!-- product-start -->
-                            <div class="swiper-slide product-box ">
-                                <a href="">
-                                    <span class="add-to-fav"><button><i class="fa-regular fa-heart"></i></button></span>
-                                    <div class="product-image">
-                                        <img src="/images/product_holder.png" alt="">
-                                        <span>تخفيض</span>
-                                    </div>
-                                    <div class="product-info">
-                                        <h4 class="product-name">اسم المنتج</h4>
-                                        <p class="product-description">الوصف الوصف الوصف الوصف  الوصف الوصف الوصف الوصف </p>
-                                        <h4 class="product-price ">
-                                            <div class="buy-by-money"><span class="old"> 45 </span><span class="new"> | 35 </span><span> دل </span></div>
-                                            <div class="buy-by-points">200 <i class="fa-solid fa-gem"></i></div>            
-                                        </h4>
-                                    </div>
-                                </a> 
+                                <span class="add-to-fav"><a href="/templates/fav.html"><i class="fa-regular fa-heart"></i></a></span>
+                                <span class="add-to-cart">
+                                    <a href="/templates/cart.html"><span> إضافة الى السلة </span><i class="fa-solid fa-cart-shopping"></i> </a>
+                                </span>
                             </div>
                             <!-- product-end -->
                         </div>

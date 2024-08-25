@@ -1,3 +1,10 @@
+/* 
+      الفهرس
+
+      
+
+*/
+
 /* Start Varibules */
 :root {
   /* colors */
@@ -182,6 +189,7 @@ select option::selection {
 }
 /* Start main product box  */
 .product-box{
+  position: relative;
   background-color: var(--background-color-alt);
   width: 280px; /*عرض المنتج*/
   height:360px; /*طول المنتج*/
@@ -192,6 +200,10 @@ select option::selection {
   -moz-border-radius: var(--main-border-radius);
   -ms-border-radius: var(--main-border-radius);
   -o-border-radius: var(--main-border-radius);
+}
+.product-box button {
+  background: none;
+  border: none;
 }
  .product-box:last-child {
   margin-left: 60px;
@@ -212,18 +224,18 @@ select option::selection {
     margin: 10px 8px 15px ;
   }
 }
-.product-box a {
-  position: relative;
-}
-.product-box a button {
-  background: none;
-  border: none;
-}
 .product-box .add-to-fav {
   position: absolute;
-  top: 4%;
-  right: 4%;
-  z-index: 1;
+  cursor: pointer;
+  top: 2%;
+  right: 3%;
+  padding:4px 4px 2px;
+  background-color: var(--seprator-color);
+  border-radius:5px;
+  -webkit-border-radius:5px;
+  -moz-border-radius:5px;
+  -ms-border-radius:5px;
+  -o-border-radius:5px;
 }
 .product-box .add-to-fav i {
   color: var(--main-color);
@@ -240,32 +252,38 @@ select option::selection {
   border-top-left-radius: var(--main-border-radius);
   border-top-right-radius: var(--main-border-radius);
 }
-.product-box .product-image span {
+.product-box .product-image .off-holder {
+  display: none;
+}
+.product-box .product-image .off-holder span {
   visibility: hidden;
 }
-.product-box.offer .product-image span{
+.product-box.offer .product-image .off-holder {
+  position: absolute;
+  display: flex;
+  justify-content: end;
+  width: 100%;
+}
+.product-box.offer .product-image .off-holder span{
   visibility: visible;
   background-color: red;
   color: #ffffff;
   font-size: var(--lab-xs-size);
   font-weight: bold;
   text-align: center;
-  position: absolute;
-  top: 0;
-  left: 0;
   padding: 5px 10px;
   border-top-left-radius: var(--main-border-radius);
   border-bottom-right-radius: var(--main-border-radius);
 }
 /* tab media */
 @media (max-width: 868px) {
-  .product-box.offer .product-image span {
+  .product-box.offer .product-image .off-holder  span {
     font-size: var(--tab-xs-size);
   }
 }
 /* mobile media */
 @media (max-width: 576px) {
-  .product-box.offer .product-image span {
+  .product-box.offer .product-image .off-holder span {
     font-size: var(--mob-xs-size);
     padding: 5px 8px;
   }
@@ -369,12 +387,14 @@ select option::selection {
   left: 15px;
   color: #ececec;
   background-color: var(--main-color);
-  padding: 8px 10px;
   border-radius: calc(var(--main-border-radius) - 4px);
   -webkit-border-radius: calc(var(--main-border-radius) - 4px);
   -moz-border-radius: calc(var(--main-border-radius) - 4px);
   -ms-border-radius: calc(var(--main-border-radius) - 4px);
   -o-border-radius: calc(var(--main-border-radius) - 4px);
+}
+.product-box .add-to-cart a {
+  padding: 8px 10px;
 }
 .product-box .add-to-cart span {
   font-size: var(--lab-s-size);
@@ -384,6 +404,9 @@ select option::selection {
   font-size: var(--lab-s-size);
   color: #ececec;
   padding-right: 4px;
+}
+.home-page .add-to-cart , .account-page .add-to-cart, .product-details-page .add-to-cart {
+  display: none;
 }
 /* small tab media */
 @media (max-width: 676px)  {
@@ -399,13 +422,17 @@ select option::selection {
   .product-box .add-to-cart {
     bottom: 8px;
     left: 8px;
-    padding: 4px 10px;
+  }
+  .product-box .add-to-cart a{
+    padding: 5px 10px;
   }
 }
 /* small mobile media */
 @media (max-width: 509px)  {
   .product-box .add-to-cart {
     bottom: 10px;
+  }
+  .product-box .add-to-cart a{
     padding: 2px 8px 4px;
   }
   .product-box .add-to-cart span {
@@ -438,6 +465,31 @@ select option::selection {
 /* End main product box  */
 /* Start specific product box  */
 /* Tab media  */
+.page:not(.search-page) .specific .product-box.offer .product-image .off-holder {
+  justify-content: start;
+}
+/* اضفت كلاس بيج لاستهداف صفحة المفضلة والسلة فقط دون البحث حيث سيتم تعديله بمفرد بالميديا*/
+.page:not(.search-page) .specific .product-box.offer .off-holder span{
+  padding: 5px 8px;
+  border-radius: 0px 7px 0px 7px;
+  -webkit-border-radius: 0px 7px 0px 7px;
+  -moz-border-radius: 0px 7px 0px 7px;
+  -ms-border-radius: 0px 7px 0px 7px;
+  -o-border-radius: 0px 7px 0px 7px;
+}
+@media (max-width: 792px){
+  .search-page .specific .product-box.offer .product-image .off-holder {
+    justify-content: start;
+  }
+  .search-page .specific .product-box.offer .off-holder span{
+    padding: 5px 8px;
+    border-radius: 0px 7px 0px 7px;
+    -webkit-border-radius: 0px 7px 0px 7px;
+    -moz-border-radius: 0px 7px 0px 7px;
+    -ms-border-radius: 0px 7px 0px 7px;
+    -o-border-radius: 0px 7px 0px 7px;
+  }
+}
 @media (max-width: 792px) {
   .specific {
     width: 100%; 
@@ -458,7 +510,7 @@ select option::selection {
     flex-direction: row;
   }
   .specific .product-box .add-to-fav {
-    top: 7%;
+    top: 5%;
     right: 93%;
   }
   .product-box .add-to-fav i {
@@ -474,18 +526,6 @@ select option::selection {
     border-top-left-radius: 0px ;
     border-top-right-radius: var(--main-border-radius);
     border-bottom-right-radius: var(--main-border-radius);
-  }
-  .specific .product-box.offer .product-image span{
-    position: absolute;
-    top: 4%;
-    left: 58%;
-    z-index: 2;
-    padding: 5px 8px;
-    border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
   }
   .specific .product-box .product-info{
     padding: 20px 15px 10px ;
@@ -519,7 +559,7 @@ select option::selection {
     height: 180px;
   }
   .specific .product-box .add-to-fav {
-    right: 92%;
+    right: 90%;
   }
   .product-box .add-to-fav i {
     font-size: var(--mob-xxl-size);
@@ -528,8 +568,7 @@ select option::selection {
     min-width: 160px;
     max-width: 200px;
   }
-  .specific .product-box.offer .product-image span{
-    left: 66%;
+  .specific .product-box.offer .product-image .off-holder span{
     font-size: var(--mob-s-size);
   }
   .specific .product-box .product-info .product-name {
@@ -550,9 +589,6 @@ select option::selection {
   .specific .product-box {
     height: 150px;
   }
-  .specific .product-box .add-to-fav {
-    right: 92%;
-  }
   .product-box .add-to-fav i {
     font-size: var(--mob-xl-size);
   }
@@ -560,8 +596,7 @@ select option::selection {
     min-width: 125px;
     max-width: 180px;
   }
-  .specific .product-box.offer .product-image span{
-    left: 63%;
+  .specific .product-box.offer .product-image .off-holder span{
     font-size: var(--mob-s-size);
     padding: 2px 5px;
   }
@@ -595,17 +630,16 @@ select option::selection {
     height: 120px;
   }
   .specific .product-box .add-to-fav {
-    top: 7%;
+    top: 4%;
   }
   .specific .product-box .add-to-fav i {
-    font-size: var(--mob-xl-size);
+    font-size: var(--mob-l-size);
   }
   .specific .product-box .product-image{
     min-width: 100px;
     max-width: 120px;
   }
-  .specific .product-box.offer .product-image span{
-    left: 59%;
+  .specific .product-box.offer .product-image.off-holder span{
     font-size: var(--mob-s-size);
     padding: 2px 5px;
   }
@@ -626,7 +660,7 @@ select option::selection {
 /* very very small mobile media */
 @media (max-width: 376px) {
   .specific .product-box .add-to-fav {
-    top: 7%;
+    top: 6%;
   }
   .specific .product-box .add-to-fav i {
     font-size: var(--mob-m-size);
@@ -2371,13 +2405,18 @@ hr.sep {
   max-height: 350px;
   overflow-y: auto;
   padding: 20px;
-  z-index: 100;
+  z-index: 10;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   border-radius: var(--main-border-radius);
   -webkit-border-radius: var(--main-border-radius);
   -moz-border-radius: var(--main-border-radius);
   -ms-border-radius: var(--main-border-radius);
   -o-border-radius: var(--main-border-radius);
+  transform: translate(-50% -50%);
+  -webkit-transform: translate(-50% -50%);
+  -moz-transform: translate(-50% -50%);
+  -ms-transform: translate(-50% -50%);
+  -o-transform: translate(-50% -50%);
 }
 .search-bar .filter-header {
   display: flex;
@@ -2531,7 +2570,7 @@ hr.sep {
 /* End Search Bar */
 /* Start Searched-products  */
 .search .searched-products {
-  position: relative;
+  /* position: relative; */
   margin: 30px 0;
   display: flex;
   justify-content: center;
@@ -2765,6 +2804,7 @@ hr.sep {
     display: flex;
     flex-direction: row;
   }
+  /* qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq */
   .favorite .product-box .add-to-fav {
     top: 5%;
     right: 95%;
@@ -2782,18 +2822,9 @@ hr.sep {
     border-top-right-radius: var(--main-border-radius);
     border-bottom-right-radius: var(--main-border-radius);
   }
-  .favorite .specific .product-box.offer .product-image span{
+  .favorite .specific .product-box.offer .product-image  .off-holder span{
     font-size: var(--lab-s-size);
-    position: absolute;
-    top: 4%;
-    left: 65%;
-    z-index: 2;
     padding: 5px 8px;
-    border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
   }
   .favorite .searched-products .product-box .product-info {
     padding: 20px 15px 10px ;
@@ -2821,15 +2852,11 @@ hr.sep {
     width: 75%;
   }
   .favorite .product-box .add-to-fav {
-    right: 96%;
+    right: 94%;
   }
   .favorite .specific .product-box .product-image{
     min-width: 200px;
     max-width: 250px;
-  }
-  .favorite .specific .product-box.offer .product-image span{
-    top: 4%;
-    left: 69%;
   }
   .favorite .specific .product-box .product-info .product-name {
     font-size: var(--lab-xl-size);
@@ -2843,6 +2870,17 @@ hr.sep {
 }
 /* End fav-products  */
 /* ====================================  Cart Page  ========================================================== */
+/* Edit cart trash icon  */
+@media (min-width: 895px){
+  .cart .favorite .product-box .add-to-fav {
+    right: 93%;
+  }
+}
+@media (min-width: 1120px){
+  .cart .favorite .product-box .add-to-fav {
+    right: 95%;
+  }
+}
 /* Start product size & color  */
 .cart .specific .product-box .product-info .product-price {
   bottom: 10%;
