@@ -448,7 +448,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (showCheckbox && receipt && confirmButton) { // تحقق من وجود العناصر قبل إضافة الأحداث
         // وظيفة لتحديث حالة الفاتورة بناءً على عرض الشاشة
         function updateReceiptVisibility() {
-            if (window.innerWidth <= 893) {
+            if (window.innerWidth <= 992) {
                 // استعادة حالة التشيك بوكس من localStorage عند تحميل الصفحة
                 if (localStorage.getItem('showCheckboxState') === 'checked') {
                     showCheckbox.checked = true;

@@ -114,193 +114,148 @@
         </div>
     </header>
     <!-- End Header  -->
-    <div class="cart-page page">
+    <div class="search-page">
         <!-- Start Nav -->
         <nav>
             <div class="container">
-                <div class="go-confirm-order">
-                        <div class="order">
-                            <div class="price">
-                                <span>السعر الإجمالي</span>
-                                <span>250 دل</span>
-                            </div>
-                            <div class="show-receipt">
-                                <input type="checkbox" name="" id="show" class="show">
-                                <label for="show">إتمام الطلب</label>
-                            </div>
-                        </div>
-                </div>
                 <div class="nav">
                     <div class="nav-item">
                         <a href="../index.html" id="home" ><i class="fa-solid fa-store"></i></a>
                         <label for="home">الرئيسية</label>
                     </div>
-                    <div class="nav-item active">
-                        <a href="cart.html" id="cart"><i class="fa-solid fa-bag-shopping"></i></a>
+                    <div class="nav-item">
+                        <a href="/templates/cart.html" id="cart"><i class="fa-solid fa-bag-shopping"></i></a>
                         <label for="cart">حقيبتي</label>
                     </div>
-                    <div class="nav-item ">
-                        <a href="search.html" id="search"><i class="fa-solid fa-magnifying-glass"></i></a>
+                    <div class="nav-item  active">
+                        <a href="/templates/search.html" id="search"><i class="fa-solid fa-magnifying-glass"></i></a>
                         <label for="search">البحث</label>
                     </div>
-                    <div class="nav-item  ">
-                        <a href="fav.html" id="fav"><i class="fa-solid fa-bookmark"></i></a>
+                    <div class="nav-item">
+                        <a href="/templates/fav.html" id="fav"><i class="fa-solid fa-bookmark"></i></a>
                         <label for="fav">المفضلة</label>
                     </div>
                     <div class="nav-item ">
-                        <a href="account.html" id="account"><i class="fa-solid fa-circle-user"></i></a>
+                        <a href="/templates/account.html" id="account"><i class="fa-solid fa-circle-user"></i></a>
                         <label for="account">حسابي</label>
                     </div>
                 </div>
             </div>
         </nav>
         <!-- End Nav -->
-        <!-- Start cart-products  -->
-        <div class="cart" style='padding-top:100px;'>
-            <div class="favorite">
-                <div class="searched-products">
-                    <div class="container">
-                        <div class="products-cards">
-                            
-                            <div class="av-status">
-                               <p> المنتجات المتاحة</p>
-                               <hr>
-                            </div>
-
-                            <!-- product-start -->
-                            <div class="specific">
-                                    <div class="product-box offer">
-                                        <a href="/templates/product-details.html">
-                                            <div class="product-image">
-                                                <div class="off-holder">
-                                                    <span>تخفيض</span>
-                                                </div>
-                                                <img src="/images/product_holder.png" alt="">
-                                            </div>
-                                            <div class="product-info">
-                                                <h4 class="product-name">  بنطال جينز ابيض </h4>
-                                                <h4 class="product-size ">المقاس: <span>32</span></h4>
-                                                <h4 class="product-color ">اللون: <span>احمر</span></h4>
-                                                <h4 class="product-price ">
-                                                    <div class="buy-by-money"><span class="old"> 138 </span><span class="new"> | 128 </span><span> دل </span></div>
-                                                    <div class="buy-by-points">190 <i class="fa-solid fa-gem"></i></div>            
-                                                </h4>
-                                            </div>
-                                        </a> 
-
-                                        <span class="add-to-trash add-to-fav"><a><i class="fa-regular fa-trash-can"></i></a></span> <!-- غيرت اسم الكلاس -->
-                                        <span class="add-to-fav"><a><i class="fa-solid fa-heart"></i></a></span>
-
-                                        <span class="quantity">
-                                           <div class="cont">
-                                                <div class="in-stock">متبقي (<span id="stock-quantity">13</span>) في المخزن</div>
-                                           </div>
-                                            <button id="minus-{{ item.product.id }}" class="minus" data-product-id="{{ item.product.id }}">
-                                                <i class="fa-regular fa-square-minus"></i>
-                                            </button>
-                                            <span id="quantity-{{ item.product.id }}">20</span>
-                                            <button id="plus-{{ item.product.id }}" class="plus" data-product-id="{{ item.product.id }}">
-                                                <i class="fa-regular fa-square-plus"></i>
-                                            </button>  
-                                        </span>
-                                    </div>
-                            </div>
-                            <!-- product-end -->
-
-
-                            <div class="av-status">
-                               <p>المنتجات الغير متاحة حاليا</p>
-                               <hr>
-                            </div>
-                           
-                            <!-- product-start -->
-                            <div class="specific">
-                                    <div class="product-box offer">
-                                        <a href="/templates/product-details.html">
-                                            <div class="product-image">
-                                                <div class="off-holder">
-                                                    <span>تخفيض</span>
-                                                </div>
-                                                <img src="/images/product_holder.png" alt="">
-                                            </div>
-                                            <div class="product-info">
-                                                <h4 class="product-name">  بنطال جينز ابيض </h4>
-                                                <h4 class="product-size ">المقاس: <span>32</span></h4>
-                                                <h4 class="product-color ">اللون: <span>احمر</span></h4>
-                                                <h4 class="product-price ">
-                                                    <div class="buy-by-money"><span class="old"> 138 </span><span class="new"> | 128 </span><span> دل </span></div>
-                                                    <div class="buy-by-points">190 <i class="fa-solid fa-gem"></i></div>            
-                                                </h4>
-                                            </div>
-                                        </a> 
-
-                                        <span class="add-to-trash add-to-fav"><a><i class="fa-regular fa-trash-can"></i></a></span> <!-- غيرت اسم الكلاس -->
-                                        <span class="add-to-fav"><a><i class="fa-solid fa-heart"></i></a></span>
-
-                                        <span class="quantity">
-                                           <div class="cont">
-                                                <div class="in-stock">متبقي (<span id="stock-quantity">13</span>) في المخزن</div>
-                                           </div>
-                                            <button id="minus-{{ item.product.id }}" class="minus" data-product-id="{{ item.product.id }}">
-                                                <i class="fa-regular fa-square-minus"></i>
-                                            </button>
-                                            <span id="quantity-{{ item.product.id }}">20</span>
-                                            <button id="plus-{{ item.product.id }}" class="plus" data-product-id="{{ item.product.id }}">
-                                                <i class="fa-regular fa-square-plus"></i>
-                                            </button>  
-                                        </span>
-                                    </div>
-                            </div>
-                            <!-- product-end -->
-                           
-                        </div>
-                        <div class="receipt offer"> <!-- اضف كلاس اوفر في حال وجود تخفيض- -->
-                            <span class="total-quantity">3 <br> قطعة</span>
-                            <div class="total-price">
-                                <h3>السعر الإجمالي:</h3>
-                                <h4 class="price "><span class="old"> 38 </span><span class="new"> | 28 </span><span> دل</span> + <span class="gem-price"> 190  <i class="fa-solid fa-gem" style="color: var(--main-color);"></i></span></h4>
-                            </div>
-                            <div class="points">
-                                <h3>النقاط  المكتسبة:</h3>
-                                <h4>+50 <i class="fa-solid fa-gem"></i></h4>
-                            </div>
-                            <form action="" class="discount">
-                                <p>هل لديك لديك كوبون خصم؟</p>
-                                <div class="check-code">
-                                    <input type="text" name="" id="" placeholder="اكتبه هنا">
-                                    <input type="submit" value="" id="check">
-                                    <label for="check"><i class="fa-solid fa-clipboard-check"></i></label>
+        <!-- Start Search Bar -->
+        <div class="search-bar">
+            <div class="container">
+                <form action="" class="search">
+                        <input type="search" class="search-input" name="search-query" placeholder="ما الذي تبحث عنه؟">
+                        <div class="filter-container">
+                            <button type="button" class="filter-toggle">
+                                <i class="fa-solid fa-sliders"></i>
+                            </button>
+                            <div class="filter-options">
+                                <div class="filter-header">
+                                    <h2>خيارات الفلترة</h2>
+                                    <button type="button" class="close-filter">&times;</button>
                                 </div>
-                                <input type="submit" value="إتمام الطلب" class="confirm ordered-done-link">
-                            </form>
+                                <!-- قائمة الفلترة -->
+                                <div class="filter-tabs">
+                                    <button type="button" class="filter-tab" data-target="price">السعر</button>
+                                    <button type="button" class="filter-tab" data-target="category">التصنيف</button>
+                                    <button type="button" class="filter-tab" data-target="product_type">نوع المنتج</button>
+                                    <button type="button" class="filter-tab" data-target="size">المقاس</button>
+                                </div>
+                                <!-- محتويات الفلترة -->
+                                <div class="filter-content">
+                                    <!-- سيتم إضافة الفلاتر المختارة هنا -->
+                                </div>
+                                <!-- زر تطبيق الفلاتر -->
+                                <button type="submit" class="apply-filters">تطبيق الفلاتر</button>
+                            </div>
+                        </div>
+                </form>
+            </div>
+        </div>
+        <!-- نماذج الفلاتر المخفية -->
+        <div id="price" class="filter-group-template">
+            <label>نطاق السعر:</label>
+            <div class="price-range">
+                <input type="number" placeholder="من" aria-label="سعر من">
+                <input type="number" placeholder="إلى" aria-label="سعر إلى">
+            </div>
+        </div>
+        
+        <div id="category" class="filter-group-template">
+            <label>التصنيف:</label>
+            <select>
+                <option value="">اختر التصنيف</option>
+                <option value="category1">رجالي </option>
+                <option value="category2">نسائي </option>
+            </select>
+        </div>
+
+        <div id="product_type" class="filter-group-template">
+            <label>نوع المنتج:</label>
+            <select>
+                <option value="">اختر  نوع المنتج</option>
+                <option value="category1">سروال </option>
+                <option value="category2">نظارة </option>
+                <option value="category2">تي شيرت </option>
+                <option value="category2">معطف  </option>
+            </select>
+        </div>
+
+        <div id="size" class="filter-group-template">
+            <label>المقاس:</label>
+            <select>
+                <option value="">اختر المقاس</option>
+                <option value="small">S</option>
+                <option value="medium">M</option>
+                <option value="large">L</option>
+                <option value="large">Xl</option>
+                <option value="large">2Xl</option>
+                <option value="large">3Xl</option>
+            </select>
+        </div>
+        <!-- End Search Bar -->
+        <!-- Start Searched-products  -->
+        <div class="search">
+            <div class="search-title">
+                <div class="title-image">
+                    <img src="/images/adidas.jpeg" alt="">
+                </div>
+                <h2> اقوى العروض <span>(58)</span></h2>
+            </div>
+            <div class="searched-products">
+                <div class="container">
+                    <div class="products-cards">
+                        <div class="no-result">
+                            <h2>نعتذر لايوجد نتائج لعرضها حاليا</h2>
+                            <i class="fa-solid fa-face-frown"></i>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- End cart-products  -->
-        <!-- Start add-cart-pop-page Section -->
-        <div class="Pop-up-page ordered-done-pop-page">
-            <div class="logo">
-                <img src="/images/name logo.jpg" alt="">
-            </div>
-            <p> طلبك في طريقه إليك</p>
-            <i class="fa-solid fa-boxes-packing"></i>
-            <p class="confirm-order-message">سوف نتصل بك لتأكيد الطلب بأقرب وقت ممكن</p>
-        </div>
-        <!-- End add-cart-pop-page Section -->
-        <!-- Start make-it-empty Section -->
-        <div class="Pop-up-page empty-pop-page">
-            <div class="logo">
-                <img src="/images/name logo.jpg" alt="">
-            </div>
-            <p>هل انت متأكد انك تريد إفراغ السلة؟</p>
-            <div class="choices">
-                <button class="back">تراجع</button>
-                <button class="out"> افراغ</button>
+        <!-- End Searched-products  -->
+        <!-- Start Pagination -->
+        <div class="pagination-container">
+            <div class="container">
+                <div class="pagination">
+                    <div class="previous disapled">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                    <div class="page-number">
+                        <span class="in-page">1</span><span class="from">من</span><span class="total-pages">12</span>
+                    </div>
+                    <div class="next ">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </div>
+                </div>
             </div>
         </div>
-        <!-- End  make-it-empty  Section -->
+        <!-- End Pagination -->
+        <!-- Start search filter  -->  
+        <!-- End search filter  -->
     </div>
     <!-- Start Footer  -->
     <div class="footer">
@@ -350,7 +305,6 @@
      <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
      <script src="/javascript/main.js"></script>
      <script src="/javascript/pop-pages.js"></script>
-    
 </body>
 </html>
 

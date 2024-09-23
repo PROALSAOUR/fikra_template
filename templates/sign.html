@@ -27,53 +27,71 @@
         <!-- Start Sign page content  -->
         <div class="container">
             <div class="sign-card">
-                <div class="sign-in-face">
+                <div class="log-in-face">
                     <div class="image">
                         <img src="/images/name logo.jpg" alt="">
                     </div>
                     <h1>تسجيل الدخول</h1>
-                    <form action="">
-                        <div class="name">
-                            <div class="first-name">
-                                <label for="user-first-name">الإسم الأول</label>
-                                <input type="text" name="" id="user-first-name">
-                            </div>
-                            <div class="last-name">
-                                <label for="user-last-name"> اسم العائلة</label>
-                                <input type="text" name="" id="user-last-name">
-                            </div>
+                    <form method='POST'>
+                        <input type='hidden' name='form-type' value='log'>
+                        <div class="error-messages">
+                            <p>يرجى ادخال كلمة سر صحيحة</p>
                         </div>
                         <div class="phone-number">
-                            <label for="user-phone">رقم الهاتف </label>
-                            <input type="tel" name="" id="user-phone">
+                            <label for="user-phone">رقم الهاتف</label>
+                            <input type="tel" name="phone-number" id="user-phone" required>
+                        </div>
+                        <div class="phone-number">
+                            <label for="passoword">كلمة المرور</label>
+                            <input type="password" name="password" id="passoword" required>
+                            <a href="" class="forget-password">هل نسيت كلمة المرور؟ </a>
                         </div>
                         <input type="submit" value="تسجيل الدخول" class="verif-link">
                     </form>
                     <span class="flip">ليس لديك حساب؟ انشئ واحداً الأن.</span>
                 </div>
-                <div class="log-in-face">
+                <div class="sign-in-face">
                     <div class="image">
                         <img src="/images/name logo.jpg" alt="">
                     </div>
                     <h1>إنشاء حساب </h1>
-                    <form action="">
+                    <form method='POST'>
+                        <input type='hidden' name='form-type' value='sign'>
+                        <div class="error-messages">
+                            <p>يرجى ادخال كلمة سر صحيحة</p>
+                        </div>
                         <div class="name">
                             <div class="first-name">
                                 <label for="user-first-name">الإسم الأول</label>
+                                
                                 <input type="text" name="" id="user-first-name">
                             </div>
                             <div class="last-name">
                                 <label for="user-last-name"> اسم العائلة</label>
+                               
                                 <input type="text" name="" id="user-last-name">
                             </div>
                         </div>
                         <div class="phone-number">
                             <label for="user-phone">رقم الهاتف </label>
+                            
                             <input type="tel" name="" id="user-phone">
+                        </div>
+                        <div class="name">
+                            <div class="first-name">
+                                <label for="passoword1">كلمة المرور</label>
+                                
+                                <input type="text" name="" id="passoword1">
+                            </div>
+                            <div class="last-name">
+                                <label for="passoword2"> تأكيد كلمة المرور</label>
+                                
+                                <input type="text" name="" id="passoword2">
+                            </div>
                         </div>
                         <input type="submit" value=" إنشاء حساب" class="verif-link">
                     </form>
-                    <a class="read-policy" href="/templates/privacy-policy.html">شروط الخصوصية </a>
+                    <a class="read-policy" href="">شروط الخصوصية </a>
                     <span class="flip"> لديك حساب بالفعل؟ سجل الدخول الأن.</span>
                 </div>
             </div>
@@ -82,7 +100,7 @@
         <!-- Start Verif code content  -->
         <div class="Pop-up-page verif-code ">
             <div class="logo">
-                <img src="/images/name logo.jpg" alt="">
+                <img src="{% static "images/name logo.jpg" %}" alt="">
             </div>
             <form action="">
                 <label for="code">ادخل رمز التحقق:</label>
