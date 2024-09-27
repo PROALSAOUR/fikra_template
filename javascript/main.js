@@ -817,6 +817,48 @@ document.addEventListener("DOMContentLoaded", function () {
       }
   }
 });
-
 //  =========================================================================================================
+//  دالة اظهار الفورم واخفاءه داخل صفحة تفاصيل البطاقات
+const forMeRadio = document.getElementById('for-me');
+const forAnotherRadio = document.getElementById('for-another');
+const buyAsGiftForm = document.querySelector('.buy-as-gift');
+const sendMessageCheckbox = document.getElementById('send-message');
+const messageDetails = document.querySelector('.message-details');
+
+// التحقق من وجود العناصر
+if (forMeRadio && forAnotherRadio && buyAsGiftForm && sendMessageCheckbox && messageDetails) {
+
+    // وظيفة لتحديث عرض الفورم بناءً على اختيار الراديو
+    function updateFormVisibility() {
+        if (forMeRadio.checked) {
+            buyAsGiftForm.classList.add('dont-show'); // إضافة كلاس dont-show إذا كان for-me مختارًا
+        } else if (forAnotherRadio.checked) {
+            buyAsGiftForm.classList.remove('dont-show'); // إزالة كلاس dont-show إذا كان for-another مختارًا
+        }
+    }
+
+    // وظيفة لتحديث عرض تفاصيل الرسالة بناءً على اختيار "إرسال رسالة"
+    function updateMessageDetailsVisibility() {
+        if (sendMessageCheckbox.checked) {
+            messageDetails.classList.remove('dont-show'); // إزالة كلاس dont-show إذا كان send-message مختارًا
+        } else {
+            messageDetails.classList.add('dont-show'); // إضافة كلاس dont-show إذا لم يكن send-message مختارًا
+        }
+    }
+
+    // إضافة مستمع للأحداث على مربعات الراديو
+    forMeRadio.addEventListener('change', updateFormVisibility);
+    forAnotherRadio.addEventListener('change', updateFormVisibility);
+
+    // إضافة مستمع للأحداث على checkbox الخاص بإرسال الرسالة
+    sendMessageCheckbox.addEventListener('change', updateMessageDetailsVisibility);
+
+    // استدعاء الوظائف عند تحميل الصفحة للتأكد من حالة العناصر
+    updateFormVisibility();
+    updateMessageDetailsVisibility();
+
+} 
+//  =========================================================================================================
+
+
 
