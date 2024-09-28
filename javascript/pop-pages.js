@@ -441,7 +441,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     localStorage.setItem('showCheckboxState', 'unchecked');
                 });
             } else {
-                // إذا كانت الشاشة أكبر من 793px، اجعل الفاتورة تظهر دائمًا
+                // إذا كانت الشاشة أكبر من 992px، اجعل الفاتورة تظهر دائمًا
                 receipt.style.display = 'block';
                 localStorage.removeItem('showCheckboxState'); // إزالة حالة التشيك بوكس من localStorage
             }
@@ -454,6 +454,7 @@ document.addEventListener('DOMContentLoaded', function () {
         window.addEventListener('resize', updateReceiptVisibility);
     }
 });
+
 // =============================================================================================
 // الكود الخاص بعرض النافذة الخاصة باستعمال كود الهدية
 document.addEventListener('DOMContentLoaded', function () {
@@ -508,6 +509,98 @@ document.addEventListener('DOMContentLoaded', function () {
             hideShareCodeMenu();
         }
     });
+});
+// =============================================================================================
+// الكود الخاص بعرض النافذة الخاصة بإتمام عملية شراء كوبون بنجاح
+document.addEventListener('DOMContentLoaded', function () {
+    const menu = document.querySelector('.buy-done-pop-page');
+    const hiddenInput = document.querySelector('.buy-done-link-hidden'); // إدخال مخفي للتحقق من قيمته
+
+    if (menu && hiddenInput) { // تحقق من وجود العنصرين قبل إضافة الأحداث
+        let hideTimeout; // متغير لتخزين مؤقت الإخفاء
+
+        function showMenu() {
+            menu.style.display = 'block'; // عرض القائمة
+            setTimeout(() => {
+                menu.style.visibility = 'visible';
+                menu.style.opacity = '1';
+                menu.style.transform = 'translate(-50%, -40%) scale(1)';
+            }, 10);
+
+            // إعداد مؤقت للإخفاء بعد 2 ثوانٍ من ظهور القائمة
+            clearTimeout(hideTimeout);
+            hideTimeout = setTimeout(hideMenu, 2000);
+        }
+
+        function hideMenu() {
+            menu.style.opacity = '0';
+            menu.style.transform = 'translate(-50%, -40%) scale(0.5)';
+            setTimeout(() => {
+                menu.style.visibility = 'hidden';
+                menu.style.display = 'none';
+            }, 300);
+        }
+
+        // فحص دوري كل نصف ثانية للتحقق من قيمة مربع الإدخال المخفي
+        setInterval(function () {
+            if (hiddenInput.value === 'Successfully') {
+                if (menu.style.visibility === 'hidden' || menu.style.visibility === '') {
+                    showMenu();
+                }
+            }
+        }, 500); // يتم الفحص كل 500 مللي ثانية (نصف ثانية)
+
+        document.addEventListener('click', function (e) {
+            if (menu.style.visibility === 'visible' && !menu.contains(e.target)) {
+                hideMenu();
+            }
+        });
+    }
+});
+// =============================================================================================
+// الكود الخاص بعرض النافذة الخاصة بإضافة كوبون الى الفاتورة
+document.addEventListener('DOMContentLoaded', function () {
+    const menu = document.querySelector('.add-copon-pop-page');
+    const link = document.querySelector('.add-copon-link');
+
+    if (menu && link) { // تحقق من وجود العنصرين قبل إضافة الأحداث
+        let hideTimeout; // متغير لتخزين مؤقت الإخفاء
+
+        function showMenu() {
+            menu.style.display = 'block'; // عرض القائمة
+            setTimeout(() => {
+                menu.style.visibility = 'visible';
+                menu.style.opacity = '1';
+                menu.style.transform = 'translate(-50%, -40%) scale(1)';
+            }, 10);
+
+            // إعداد مؤقت للإخفاء بعد 3 ثوانٍ من ظهور القائمة
+            // clearTimeout(hideTimeout);
+            // hideTimeout = setTimeout(hideMenu, 3000);
+        }
+
+        function hideMenu() {
+            menu.style.opacity = '0';
+            menu.style.transform = 'translate(-50%, -40%) scale(0.5)';
+            setTimeout(() => {
+                menu.style.visibility = 'hidden';
+                menu.style.display = 'none';
+            }, 300);
+        }
+
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            if (menu.style.visibility === 'hidden' || menu.style.visibility === '') {
+                showMenu();
+            }
+        });
+
+        document.addEventListener('click', function (e) {
+            if (menu.style.visibility === 'visible' && !menu.contains(e.target) && !link.contains(e.target)) {
+                hideMenu();
+            }
+        });
+    }
 });
 // =============================================================================================
 

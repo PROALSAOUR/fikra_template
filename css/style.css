@@ -179,7 +179,6 @@ select option::selection {
 .no-scroll {
   overflow: hidden;
 }
-
 .container {
     padding: 0 15px 0;
     margin: 0 auto 0;
@@ -3564,7 +3563,7 @@ hr.sep {
     -moz-transform: translate(-60% , -60%);
     -ms-transform: translate(-60% , -60%);
     -o-transform: translate(-60% , -60%);
-}
+  }
 }
 .cart .receipt .total-quantity {
   display: inline-block;
@@ -3643,41 +3642,46 @@ hr.sep {
   display: flex;
   flex-direction: column;
 }
-.cart .receipt .discount p {
+.cart .receipt .discount > p {
   color: var(--disaple-text-color);
   font-size: calc(var(--lab-s-size) - 2px);
   margin-bottom: 5px;
-}
-.cart .receipt .discount input[type=text] {
-  height: 30px;
-}
-.cart .receipt .discount input[type=text]::placeholder {
-  font-size: calc(var(--lab-s-size) - 2px);
-  padding-right: 10px;
+  cursor: pointer;
+  text-decoration: underline;
 }
 .cart .receipt .discount .check-code {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-.cart .receipt .discount .check-code #check {
-  display: none;
-  visibility: hidden;
-}
-.cart .receipt .discount .check-code label {
   position: relative;
-  background-color: var(--main-color);
-  left: 15%;
-  height: 30px;
-  padding: 0;
-  margin-bottom: 5px;
-  width: 40px;
-  cursor: pointer;
   display: flex;
-  justify-content: center;
+  width: fit-content;
   align-items: center;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
+  justify-content: center;
+  background-color: var(--background-color);
+  padding: 5px 10px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: var(--mob-xs-size);
+  box-shadow:  3px 3px 3px rgba(0, 0, 0, 0.324);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.cart .receipt .discount .check-code p {
+  padding-right: 5px;
+  text-wrap: nowrap;
+}
+.cart .receipt .discount .check-code input {
+  margin-bottom: 0;
+}
+.cart .receipt .discount .check-code span {
+  cursor: pointer;
+  font-size: var(--mob-s-size);
+  color: var(--disaple-text-color);
+  position: absolute;
+  left: 2px;
+  top: -18px;
 }
 .cart .receipt .discount .confirm {
   background-color: var(--main-color);
@@ -3689,6 +3693,129 @@ hr.sep {
   margin: 15px auto ;
 }
 /* End order confirm  */
+/* Start add-copon-pop-page  */
+.add-copon-pop-page {
+  width: 700px;
+  /* عدل الماكس ويدث بعدين */
+  z-index: 10000;
+}
+.add-copon-pop-page .logo {
+  margin-bottom: 5px !important;
+}
+.add-copon-pop-page > p {
+  font-size: var(--lab-s-size);
+  text-align: center;
+  margin-bottom: 10px;
+}
+.add-copon-pop-page .cards-type {
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: var(--background-color);
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 0 5px var(--main-color);
+  border-radius: calc(var(--main-border-radius) - 3px);
+  -webkit-border-radius: calc(var(--main-border-radius) - 3px);
+  -moz-border-radius: calc(var(--main-border-radius) - 3px);
+  -ms-border-radius: calc(var(--main-border-radius) - 3px);
+  -o-border-radius: calc(var(--main-border-radius) - 3px);
+}
+.add-copon-pop-page .cards-type .option {
+  margin: 0 10px;
+}
+@media (max-width: 372px) {
+  .add-copon-pop-page > p {
+    font-size: var(--tab-s-size);
+  }
+  .add-copon-pop-page .cards-type .option {
+    margin: 0 10px;
+    font-size: var(--mob-m-size);
+  }
+}
+.add-copon-pop-page .choose-card {
+  overflow-y: auto;
+  max-height: 200px;
+  padding: 0 10px;
+}
+.add-copon-pop-page .choose-card .card {
+  margin-bottom: 10px;
+}
+.add-copon-pop-page .choose-card .card input[type='radio']{
+  display: none;
+  position: absolute;
+  visibility: hidden;
+}
+.add-copon-pop-page .choose-card .card label{
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  background-color: var(--background-color);
+  box-shadow:  3px 3px 2px rgba(0, 0, 0, 0.224);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.add-copon-pop-page .choose-card .card input:checked ~ label {
+  border: 3px solid var(--main-color);
+}
+.add-copon-pop-page .choose-card .card .image {
+  width: 25%;
+}
+.add-copon-pop-page .choose-card .card .image img {
+  width: 100%;
+  height: 100%;
+}
+.add-copon-pop-page .choose-card .card .details {
+  padding: 10px; 
+  margin-right: 5px;
+}
+.add-copon-pop-page .choose-card .card .details h4 {
+  margin-bottom: 5px;
+  font-size: 12px;
+}
+.add-copon-pop-page .choose-card .card .details p {
+  text-align: start;
+  font-size: 10px;
+}
+.add-copon-pop-page .choose-card .card .card-qty {
+  position: absolute;
+  background-color: var(--main-color);
+  padding:2px 5px;
+  left: 5px;
+  bottom: 5px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.add-copon-pop-page .choose-card .card .card-qty p {
+  font-size: 10px;
+  color: #ffffff;
+}
+.add-copon-pop-page form:not(:first-of-type) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.add-copon-pop-page form button {
+  padding: 5px;
+  margin: 10px auto 0;
+  background-color: var(--main-color);
+  color: #ffffff;
+  border: none;
+  font-weight: 800;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+/* End add-copon-pop-page  */
 /* Start avilable status  */
 .cart .av-status {
   position: relative;
@@ -5812,6 +5939,9 @@ input[type="number"] {
 .dont-show {
   display: none;
   visibility: hidden;
+  width: 0;
+  height: 0;
+  opacity: 0;
 }
 .cards-repo .search-bar {
   padding-top: 20px;
@@ -6269,12 +6399,12 @@ input[type="number"] {
   align-items: center;
   justify-content: center;
 }
-.cards-details .lower-part .recipet .buy-for input {
+.recipet .buy-for input , .cards-type input[type='radio']{
   position: absolute;
   opacity: 0;
   cursor: pointer;
 }
-.cards-details .lower-part .recipet .buy-for .custom-radio {
+.custom-radio {
   position: relative;
   display: inline-block;
   width: 15px;
@@ -6284,12 +6414,12 @@ input[type="number"] {
   border: 2px solid var(--main-text-color);
 }
 /* تأثير عند تحديد الراديو */
-.cards-details  .buy-for  input[type="radio"]:checked + .custom-radio {
+input[type="radio"]:checked + .custom-radio {
   background-color: var(--main-color); /* اللون الجديد عند التحديد */
   border-color: var(--main-color);
 }
 
-.cards-details  .buy-for .custom-radio::after {
+.custom-radio::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -6305,7 +6435,7 @@ input[type="number"] {
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
 }
-.cards-details  .buy-for input[type="radio"]:checked + .custom-radio::after {
+input[type="radio"]:checked + .custom-radio::after {
   display: block;
 }
 .cards-details .lower-part .recipet .buy-for label {
@@ -6497,4 +6627,53 @@ input[type="number"] {
     font-size: var(--mob-s-size);
   }
 }
+.cards-details .lower-part .recipet .note {
+  display: block;
+  text-decoration: underline;
+  text-wrap: nowrap;
+  text-align: center;
+  margin: 20px auto 0;
+  font-size: var(--mob-xs-size);
+  color: #312eb1;
+}
+@media (max-width:562px) {
+  .cards-details .lower-part .recipet .note {
+    font-size: var(--mob-s-size);
+  }
+}
+@media (max-width:380px) {
+  .cards-details .lower-part .recipet .note {
+    font-size: calc(var(--mob-s-size) - 2px);
+  }
+}
 /* End Copon & Gift Details Page */
+/* Start buy-done-pop-page Section  */
+.buy-done-pop-page p{
+  font-size: var(--lab-m-size);
+}
+.buy-done-pop-page > i {
+  color: #1d9f4d;
+  text-align: center;
+  display: block;
+  font-size: 80px;
+  margin: 10px 0 30px;
+}
+.buy-done-pop-page a  {
+  position: absolute;
+  left: 15px;
+  bottom: 15px;
+  color: #312eb1;
+  font-weight: 700;
+}
+@media (max-width:380px) {
+  .buy-done-pop-page p{
+    font-size: var(--mob-m-size);
+  }
+  .buy-done-pop-page > i {
+    font-size: 60px;
+  }
+  .buy-done-pop-page a {
+    font-size: var(--mob-s-size);
+  }
+}
+/* End buy-done-pop-page Section  */

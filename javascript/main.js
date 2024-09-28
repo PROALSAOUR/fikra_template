@@ -859,6 +859,35 @@ if (forMeRadio && forAnotherRadio && buyAsGiftForm && sendMessageCheckbox && mes
 
 } 
 //  =========================================================================================================
+// الكود الخاص  بتبديل العرض  بين الكوبونات والهدايا في صفحة اختيار كوبون لاستعماله
+document.addEventListener('DOMContentLoaded', function () {
+  const giftCardsRadio = document.getElementById('gift-cards');
+  const coponCardsRadio = document.getElementById('copon-cards');
+  const giftForm = document.getElementById('gift-form');
+  const coponsForm = document.getElementById('copons-form');
+
+  // التحقق من وجود جميع العناصر قبل المتابعة
+  if (giftCardsRadio && coponCardsRadio && giftForm && coponsForm) {
+      // التحقق من حالة الراديو وتعيين الكلاس المناسب
+      function checkRadioSelection() {
+          if (giftCardsRadio.checked) {
+              giftForm.classList.remove('dont-show');
+              coponsForm.classList.add('dont-show');
+          } else if (coponCardsRadio.checked) {
+              coponsForm.classList.remove('dont-show');
+              giftForm.classList.add('dont-show');
+          }
+      }
+
+      // استدعاء الدالة عند تغيير الاختيار
+      giftCardsRadio.addEventListener('change', checkRadioSelection);
+      coponCardsRadio.addEventListener('change', checkRadioSelection);
+
+      // استدعاء الدالة في البداية للتحقق من الحالة الأولية
+      checkRadioSelection();
+  } 
+});
+//  =========================================================================================================
 
 
 
