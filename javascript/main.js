@@ -888,6 +888,65 @@ document.addEventListener('DOMContentLoaded', function () {
   } 
 });
 //  =========================================================================================================
+//  انشاء تأثير قلب البطاقة لبطاقة الهدية 
 
+document.addEventListener('DOMContentLoaded', function() {
+  const flipButton = document.querySelector('.face .content .flip');
+  const face = document.querySelector('.gift-card .card-body');
+  const content = document.querySelector('.back .content');
+  const giftCard = document.querySelector('.gift-card');
+  const showGiftCardInput = document.getElementById('show-gift-card');
+  const exitButton = document.getElementById('exit'); // إضافة هذا السطر للعنصر .exit
 
+  // تحقق من وجود العناصر في الصفحة
+  if (flipButton && face && content && giftCard && showGiftCardInput) {
+    
+    // عند تغيير حالة الـ checkbox لإظهار أو إخفاء بطاقة الهدية
+    showGiftCardInput.addEventListener('change', function() {
+      if (this.checked) {
+        // إزالة كلاس hidden من .gift-card إذا كان checkbox محدد
+        giftCard.classList.remove('hidden');
+      } else {
+        // إضافة كلاس hidden إلى .gift-card إذا كان checkbox غير محدد
+        giftCard.classList.add('hidden');
+      }
+    });
+
+    // عند النقر على "انقر هنا" لإضافة كلاس rotate
+    flipButton.addEventListener('click', function() {
+      if (!face.classList.contains('rotate')) {
+        face.classList.remove('hidden'); // تأكد أن العنصر مرئي
+        face.classList.add('rotate');
+      }
+    });
+
+    // عند النقر على محتوى الظهر لإزالة كلاس rotate
+    content.addEventListener('click', function() {
+      if (face.classList.contains('rotate')) {
+        face.classList.remove('rotate');
+      }
+    });
+
+    // حدث لإغلاق بطاقة الهدية عند النقر خارجها
+    document.addEventListener('click', function(event) {
+      // تحقق مما إذا كان النقر خارج عنصر .gift-card
+      if (!giftCard.contains(event.target) && !showGiftCardInput.contains(event.target)) {
+        showGiftCardInput.checked = false; // تغيير حالة checkbox إلى غير مختار
+        giftCard.classList.add('hidden'); // إضافة كلاس hidden
+      }
+    });
+
+    // إذا كنت تريد إغلاق البطاقة عند النقر على .exit
+    if (exitButton) {
+      exitButton.addEventListener('click', function() {
+        showGiftCardInput.checked = false; // تغيير حالة checkbox إلى غير مختار
+        giftCard.classList.add('hidden'); // إضافة كلاس hidden
+      });
+    }
+    
+  } 
+});
+
+//  =========================================================================================================
+  
 
